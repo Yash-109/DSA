@@ -30,7 +30,7 @@ int main(){
     {
         cout<<decToBinary(i)<<endl;
     }
-
+    
     cout<<endl;
     cout<<bintoDecimal(100);
     return 0;
