@@ -2,7 +2,7 @@
 using namespace std;
 void pattern1(int n){
     for(int i=0;i<n;i++){
-        for(int j=n-1;j>=i;j--){
+        for(int j=0;j<n-i;j++){
             cout<<"*";
         }
         cout<<"\n";
@@ -11,7 +11,7 @@ void pattern1(int n){
 
 void pattern2(int n){
     for(int i=0;i<n;i++){
-        for(int j=n-1;j>=i;j--){
+        for(int j=0;j<n-i;j++){
             cout<<j+1<<" ";
         }
         cout<<"\n";
@@ -20,7 +20,7 @@ void pattern2(int n){
 
 void pattern3(int n){
     for(int i=0;i<n;i++){
-        for(int j=n-1;j>=i;j--){
+        for(int j=0;j<n-i;j++){
             cout<<i+1<<" ";
         }
         cout<<"\n";
