@@ -22,6 +22,13 @@ void ptn1(int a)
         cout<<endl;
     }
 }
+
+// *********
+//  ******* 
+//   *****
+//    ***
+//     *
+
 void ptn2(int a)
 {
     for(int i=0;i<a;i++)
