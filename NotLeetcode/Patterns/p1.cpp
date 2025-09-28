@@ -85,17 +85,35 @@ void pattern5(int n)
         
     }
 }
+
+void pattern6(int n)
+{
+    
+    for(int i =0;i<n;i++)
+    {
+        char ch = 'E' - i;
+        for(int j=0;j<=i;j++)
+        {
+            cout<<ch;
+            ch++;
+        }
+        
+        cout<<endl;
+        
+    }
+}
 int main(){
     int t;
     cin>>t;      // for test case enter: how many pattern want to print
     for(int i=0;i<t;i++){
        int n;
        cin>>n;        // no of rows for each pattern particular
-       pattern1(n);          
-       pattern2(n);
-       pattern3(n);
-       pattern4(n);
-       pattern5(n);
+    //    pattern1(n);          
+    //    pattern2(n);
+    //    pattern3(n);
+    //    pattern4(n);
+    //    pattern5(n);
+       pattern6(n);
     }
     
     return 0;
