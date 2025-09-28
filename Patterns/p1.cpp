@@ -86,9 +86,13 @@ void pattern5(int n)
     }
 }
 
+// E
+// DE
+// CDE
+// BCDE
+// ABCDE
 void pattern6(int n)
 {
-    
     for(int i =0;i<n;i++)
     {
         char ch = 'E' - i;

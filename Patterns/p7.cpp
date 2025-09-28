@@ -90,7 +90,6 @@ void ptn2(int n)
         {
             cout<<" ";
         }
-
         //stars
         for(int j=0;j<=stars;j++)
         {
@@ -101,13 +100,12 @@ void ptn2(int n)
         if(i<n) space -= 2;
         else space +=2;
     }
-
 }
 int main()
 {
     int n;
     cin>>n;
-    // ptn1(n);
-     ptn2(n);
+    ptn1(n);
+    ptn2(n);
     return 0;
 }

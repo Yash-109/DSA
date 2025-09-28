@@ -86,7 +86,7 @@ void ptn2(int a)
 }
 int main(){
     int n;
-    cin>>n;
+    cin>>n; 
     // ptn1(n);
     // ptn2(n);
     ptn3(n);
