@@ -121,6 +121,7 @@ void containerList()
 
 void containerDeque()
 {
+    // Insertion and deletion at both the front and rear. 
     deque<int> dq;
     dq.push_back(2);  // {2}
     dq.emplace_back(4); //{2,4}
@@ -162,6 +163,7 @@ void containerStack()
 void containerQueue()
 {
     // FIFO: First In First Out
+    // insertion at rear and deletion at front only
     queue<int> q;
     q.push(1); //{1}
     q.push(2); //{1,2}
@@ -253,7 +255,32 @@ void containerSet()
     //for set:syntax
     auto it = st.lower_bound(2);
     auto it = st.upper_bound(3);
+}
 
+void multiSet()
+{
+    // same as set but not unique onlt sorted
+    multiset<int> ms;
+    ms.insert(1); //{1}
+    ms.insert(1); //{1,1}
+    ms.insert(1); //{1,1,1}
+
+    ms.erase(1); // all 1's eraced
+
+    // if want to erase specific not all:
+
+    ms.erase(ms.find(1)); //{1,1}
+
+   // {1,1,1}
+   ms.erase(ms.find(1), ms.find(1)+2); // {1} {star,end}
+
+}
+
+void unorderSet()
+{
+    unordered_set<int> us;
+    //not ordered but unique most cases:o(1)
+    // all operation  work but not lower and upper bound
 }
 
 int main()
