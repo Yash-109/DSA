@@ -278,7 +278,7 @@ void multiSet()
 
 void unorderSet()
 {
-    unordered_set<int> us;
+    unordered_set<int> unorderedset;
     //not ordered but unique most cases:o(1)
     // all operation  work but not lower and upper bound
 }
