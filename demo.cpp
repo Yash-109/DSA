@@ -19,7 +19,7 @@ int main()
     vector<int> vec= {1, 2, 3, 4, 5, 6,7};
     int size = 7;
     
-    cout << "Original vecay: ";
+    cout << "Original Vector: ";
     for(int i = 0; i < size; i++) {
         cout << vec[i] << " ";
     }
@@ -27,7 +27,7 @@ int main()
     
     reverse(vec, size);
     
-    cout << "Reversed vectpray: ";
+    cout << "Reversed Vector: ";
     for(int i = 0; i < size; i++) {
         cout << vec[i] << " ";
     }

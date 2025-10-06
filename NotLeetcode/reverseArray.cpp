@@ -3,6 +3,7 @@ using namespace std;
 
 void reverse(int arr[], int size)
 {
+    // two pointer approach as we have two pointers start and end
     int start = 0;
     int end = size - 1;
     
