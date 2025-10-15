@@ -1,3 +1,7 @@
+// LeetCode 50: Pow(x, n)
+// Time Complexity: O(log n) - binary exponentiation reduces the problem by half each iteration
+// Space Complexity: O(1) - only using constant extra space
+
 #include <iostream>
 using namespace std;
 
