@@ -6,7 +6,6 @@
 #include<vector>
 using namespace std;
 
-
 vector<int> pairsum(vector<int> nums,int target)
 {
     // brute force approach o(n^2)

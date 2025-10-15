@@ -14,7 +14,7 @@ int kadan()
     for(int i=0;i<n;i++)
     {
         currsum+=arr[i];
-        maxsum= max(currsum,maxsum);  // reason for writinmaxsum here is including edge(last element of array) cases
+        maxsum= max(currsum,maxsum);  // reason for writing maxsum here is including edge(last element of array) cases
 
         if(currsum<0)
         {
@@ -24,7 +24,6 @@ int kadan()
     cout<<"max:"<<maxsum;
     return 0;
 }
-
 
 //brutforce: o(n^2)
 int main()

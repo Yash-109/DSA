@@ -10,7 +10,7 @@ int main()
 
     //sort
     sort(nums.begin(), nums.end());
-    
+     
     int freq=1, ans=nums[0];
     for(int i=1;i<n;i++)
     {
