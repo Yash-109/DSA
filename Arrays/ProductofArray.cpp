@@ -17,7 +17,7 @@ public:
                 if(i != j) {
                     ans[i] *= nums[j];
                 }
-            }
+            }   
         }
         return ans;
     }
