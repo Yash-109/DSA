@@ -18,25 +18,25 @@ public:
                 return mid;
             }
 
-            if(A[st]<=A[mid])  // for left sorted array
+            if(A[st]<=A[mid])  // Check if left part is sorted
             {
-                if(A[st] <= target && target <= A[mid]) // if target is in left part
+                if(A[st] <= target && target <= A[mid]) // move left
                 {
                     end = mid-1;
                 }
-                else // if target is in right part
+                else // move right
                 {
                     st = mid+1;
                 }
             }
 
-            else // for right sorted arrya
+            else // check if right part is sorted
             {
-                if(A[mid] <= target && target <= A[end]) // if target is in right part
+                if(A[mid] <= target && target <= A[end]) // move right
                 {
                     st= mid+1;
                 }
-                else  // is target is in left part
+                else  // move left
                 {
                     end = mid-1;
                 }
