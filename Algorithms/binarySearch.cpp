@@ -2,7 +2,6 @@
 #include<vector>
 using namespace std;
 
-
 int binarysearch(vector<int> arr, int tar)
 {
     int st=0, end=arr.size()-1;
