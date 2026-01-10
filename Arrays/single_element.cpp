@@ -6,6 +6,9 @@
  * Space Complexity: O(1) - Only using constant extra space
  */
 
+#include <bits/stdc++.h>
+using namespace std;
+
 class Solution {
 public:
     int singleNonDuplicate(vector<int>& A) {
