@@ -1,6 +1,8 @@
 // Painter’s Partition Problem
 
-//          """ same as Vook Alloation Problem"""
+//          """Pattern: minimum of maximum or maximum of minimum"""
+//           """ min possible max time"""
+
 // Given are N boards of length of each given in the form of array, and M painters, such that each painter takes 1 unit of time to paint 1 unit of the board.
 
 // The task is to find the minimum time to paint all boards under the constraints that any painter will only paint continuous sections of boards.
@@ -19,7 +21,7 @@
 #include<vector>
 using namespace std;
 
-bool isValid(vector<int> arr,int n,int m,int maxAllowedMinutes)
+bool isValid(vector<int> arr,int n,int m,int maxAllowedMinutes) // O(n)
 {
     int painter=1, minutes=0;
     for(int i=0;i<n;i++)
@@ -40,7 +42,7 @@ bool isValid(vector<int> arr,int n,int m,int maxAllowedMinutes)
     }
     return painter > m ? false:true;
 }
-int allocatePainter(vector<int> &arr,int n, int m)
+int allocatePainter(vector<int> &arr,int n, int m)  //total tc : O(n * log(sum))
 {
     if(m>n)  // edge case
     {
@@ -48,7 +50,7 @@ int allocatePainter(vector<int> &arr,int n, int m)
     }
 
     int time=0, maxValue = INT_MIN;
-    for(int i=0;i<n;i++)  
+    for(int i=0;i<n;i++)                // O(n)
     {
         time+=arr[i];   // total possible time
         maxValue = max(maxValue,arr[i]);
@@ -57,7 +59,7 @@ int allocatePainter(vector<int> &arr,int n, int m)
     int ans=0;
     int st=maxValue,end=time;  // st is minimum time to paint all board and end = maximum time
 
-    while(st<=end)  // binary search logic
+    while(st<=end)  // binary search logic       //O(log(sum))
     {
         int mid = st + (end-st)/2;
 
