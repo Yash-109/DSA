@@ -47,14 +47,15 @@ int allocateBooks(vector<int> &arr,int n,int m) // TOtal tc of code: O(logN * n)
     {
         return -1;  // if student>no.of books
     }
-    int sum=0;
+    int sum=0, maxValue = INT_MIN;
     for(int i = 0;i<n;i++)  // O(n)   
     {
         sum+=arr[i];
+        maxValue = max(maxValue,arr[i]);
     }
 
     int ans=0;
-    int st=0, end=sum; // rangle of possible ans which is 0 to 10
+    int st=maxValue, end=sum; // rangle of possible ans which is 0 to 10
 
     while(st<=end)   // O(logN)*O(n) = o(n*logN)
     {

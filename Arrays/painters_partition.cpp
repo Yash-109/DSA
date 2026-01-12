@@ -40,21 +40,22 @@ bool isValid(vector<int> arr,int n,int m,int maxAllowedMinutes)
     }
     return painter > m ? false:true;
 }
-int allocatePainter(vector<int> arr,int n, int m)
+int allocatePainter(vector<int> &arr,int n, int m)
 {
     if(m>n)  // edge case
     {
         return -1;
     }
 
-    int time=0;
+    int time=0, maxValue = INT_MIN;
     for(int i=0;i<n;i++)  
     {
         time+=arr[i];   // total possible time
+        maxValue = max(maxValue,arr[i]);
     }
 
     int ans=0;
-    int st=0,end=time;
+    int st=maxValue,end=time;  // st is minimum time to paint all board and end = maximum time
 
     while(st<=end)  // binary search logic
     {
