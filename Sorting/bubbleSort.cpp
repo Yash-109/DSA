@@ -15,7 +15,7 @@ void bubbleSort(int arr[],int n)  // O(n*n)  // O(n^2)
             }
         }
 
-        if(isSwap == false)  // optimization but still tc: O(n)
+        if(isSwap == false)  // optimization but still tc: O(n^2)
         {
             break;
         }
