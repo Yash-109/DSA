@@ -3,7 +3,7 @@ using namespace std;
 
 void bubbleSort(int arr[],int n)  // O(n*n)  // O(n^2)
 {
-    for(int i=0;i<n-1;i++)   //O(n)
+    for(int i=0;i<n-1;i++)   // O(n)
     {
         bool isSwap = false;
         for(int j=0;j<n-i-1;j++)  // this loops run n time when i change so // O(n)
