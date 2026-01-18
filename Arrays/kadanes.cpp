@@ -1,20 +1,28 @@
+/*
+ * Kadane's Algorithm - Maximum Subarray Sum
+ * Time Complexity: O(n) - Kadane's Algorithm
+ * Space Complexity: O(1)
+ */
+
 #include<iostream>
 using namespace std;
 
-// maximum sybarray sum
+// Find maximum subarray sum
 
-//kadane's algo: complexity:o(n)
+// Kadane's Algorithm: Time Complexity O(n)
 
 int kadan()
 {
     int n=5;
     int arr[] = {1,2,3,4,5};
-    int maxsum=INT_MIN;
-    int currsum=0;
-    for(int i=0;i<n;i++)
+    int maxsum = INT_MIN;
+    int currsum = 0;
+    
+    for(int i = 0; i < n; i++)
     {
-        currsum+=arr[i];
-        maxsum= max(currsum,maxsum);  // reason for writing maxsum here is including edge(last element of array) cases
+        currsum += arr[i];
+        // Update max sum after adding current element (handles edge cases including last element)
+        maxsum = max(currsum, maxsum);
 
         if(currsum<0)
         {
@@ -25,7 +33,7 @@ int kadan()
     return 0;
 }
 
-//brutforce: o(n^2)
+// Brute Force Approach: Time Complexity O(n^2)
 int main()
 {
     int n=5;

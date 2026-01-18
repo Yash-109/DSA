@@ -1,15 +1,23 @@
+/*
+ * Binary Search Implementation
+ * Time Complexity: O(log n)
+ * Space Complexity: O(1) for iterative, O(log n) for recursive
+ */
+
 #include<iostream>
 #include<vector>
 using namespace std;
 
+// Iterative Binary Search
 int binarysearch(vector<int> arr, int tar)
 {
-    int st=0, end=arr.size()-1;
+    int st = 0, end = arr.size() - 1;
     
-    while(st<=end)   // = because in worst case st=end and returns mid 
+    // Continue while search space is valid (st <= end handles single element case)
+    while(st <= end)
     {
-
-       int mid = st + (end-st)/2;   // takle overflow: (st + end)/2
+        // Calculate mid to prevent integer overflow: use st + (end-st)/2 instead of (st + end)/2
+        int mid = st + (end - st) / 2;
 
         if(tar > arr[mid])
         {
@@ -24,10 +32,11 @@ int binarysearch(vector<int> arr, int tar)
             return mid;
         }
     }
-    return -1;     // if target doesn't exist.
+    return -1;     // Target not found in array
 }
 
-int recursiveBS(vector<int> arr,int tar,int st,int end)
+// Recursive Binary Search implementation
+int recursiveBS(vector<int> arr, int tar, int st, int end)
 {
     if(st<=end)
     {
