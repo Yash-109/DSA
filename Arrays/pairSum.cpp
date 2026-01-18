@@ -1,12 +1,19 @@
-//Problem: 1. Two Sum
-//Difficulty: Easy
-//Link: https://leetcode.com/problems/two-sum/
+/*
+ * Problem: 1. Two Sum
+ * Difficulty: Easy
+ * Link: https://leetcode.com/problems/two-sum/
+ * 
+ * Find two numbers in array that add up to target
+ * Returns indices of the two numbers
+ */
 
 #include<iostream>
 #include<vector>
 using namespace std;
 
-vector<int> pairsum(vector<int> nums,int target)
+// Two Pointer Approach - Works on sorted arrays
+// Time Complexity: O(n), Space Complexity: O(1)
+vector<int> pairsum(vector<int> nums, int target)
 {
     // brute force approach o(n^2)
     // vector<int> ans;
@@ -24,24 +31,27 @@ vector<int> pairsum(vector<int> nums,int target)
     // }
     // return ans;
 
-    //two pointer o(n)  ony if we have sorted array
+    // Two Pointer Approach: Time Complexity O(n)
+    // Note: This approach only works if the array is sorted
 
     vector<int> ans;
-    int n=nums.size();
-    int i=0;
-    int j=n-1;
-    while(i<j)
+    int n = nums.size();
+    int i = 0;           // Left pointer
+    int j = n - 1;       // Right pointer
+    while(i < j)
     {
-        int pairsum=nums[i]+nums[j];
-        if(pairsum>target)
+        int pairsum = nums[i] + nums[j];
+        
+        if(pairsum > target)
         {
-            j--;
+            j--;  // Sum too large, move right pointer left
         }
-        else if(pairsum<target)
+        else if(pairsum < target)
         {
-            i++;
+            i++;  // Sum too small, move left pointer right
         }
-        else{
+        else
+        {
             ans.push_back(i);
             ans.push_back(j);
             return ans;
