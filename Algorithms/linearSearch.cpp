@@ -1,9 +1,11 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-
-// linearSearch Time complexity:o(n)   n=linear tme complexity
-int linearSearch(int arr[],int size,int target)
+// Linear Search Algorithm
+// Time Complexity: O(n) - where n is the size of array
+// Space Complexity: O(1)
+// Returns index if found, -1 otherwise
+int linearSearch(int arr[], int size, int target)
 {
     for(int i=0;i<size;i++)
     {
