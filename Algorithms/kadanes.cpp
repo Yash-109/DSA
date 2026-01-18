@@ -1,9 +1,9 @@
 #include<iostream>
 using namespace std;
 
-// maximum sybarray sum
-
-//kadane's algo: complexity:o(n)
+// Kadane's Algorithm: Maximum Subarray Sum
+// Time Complexity: O(n)
+// Space Complexity: O(1)
 
 int kadan()
 {
