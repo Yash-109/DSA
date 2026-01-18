@@ -1,12 +1,23 @@
+/*
+ * Bubble Sort Implementation
+ * Time Complexity: O(n^2) in worst case, O(n) in best case (optimized)
+ * Space Complexity: O(1)
+ * Author: DSA Practice
+ * Date: January 18, 2026
+ */
+
 #include<iostream>
 using namespace std;
 
-void bubbleSort(int arr[],int n)  // O(n*n)  // O(n^2)
+// Bubble Sort with optimization (early termination if array is already sorted)
+void bubbleSort(int arr[], int n)
 {
-    for(int i=0;i<n-1;i++)   // O(n)
+    // Outer loop: iterate through all elements
+    for(int i = 0; i < n - 1; i++)
     {
         bool isSwap = false;
-        for(int j=0;j<n-i-1;j++)  // this loops run n time when i change so // O(n)
+        // Inner loop: compare adjacent elements and swap if needed
+        for(int j = 0; j < n - i - 1; j++)
         {
             if(arr[j]>arr[j+1])
             {
@@ -22,12 +33,15 @@ void bubbleSort(int arr[],int n)  // O(n*n)  // O(n^2)
     }
 }
 
-void printArray(int arr[],int n)
+// Utility function to print array elements
+// Helper function to print array elements
+void printArray(int arr[], int n)
 {
-    for(int i=0;i<n;i++) 
+    for(int i = 0; i < n; i++) 
     {
-        cout<<arr[i]<<" ";
+        cout << arr[i] << " ";
     }
+    cout << endl;
 }
 int main()
 {
