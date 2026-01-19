@@ -2,9 +2,7 @@
  * Bubble Sort Implementation
  * Time Complexity: O(n^2) in worst case, O(n) in best case (optimized)
  * Space Complexity: O(1)
- * Author: DSA Practice
- * Date: January 18, 2026
- */
+
 
 #include<iostream>
 using namespace std;
