@@ -6,7 +6,7 @@ void selectionSort(int arr[],int n)  // O(n^2)
 {
     for(int i=0;i<n-1;i++)
     {
-        int smallestIdx=i;  // starting index of unsorted part
+        int smallestIdx=i;  //   starting index of unsorted part
 
         for(int j=i+1;j<n;j++)
         {
