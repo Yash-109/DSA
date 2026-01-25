@@ -1,0 +1,5 @@
+STL = standard template library
+
+4 parts:
+
+containers       Iterators        Algorithms         Functors
