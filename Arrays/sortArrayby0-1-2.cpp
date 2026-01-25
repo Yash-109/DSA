@@ -46,7 +46,7 @@ public:
             nums[indx++] = 2;
         }
 
-        // optimal:
+        // optimal: dutch national flag algorithm
 
         int n=nums.size();
        int low=0, mid = 0, high=n-1;

@@ -45,7 +45,5 @@ int main()
 
     kadan();
     return 0;
-
-
 }
 
