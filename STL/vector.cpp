@@ -6,7 +6,7 @@ using namespace std;
 
             // size & capacity
             // push_back, pop_back  // tc:O(1)
-            // empace_back
+            // emplace_back
             // at() or []
             // front and back
             // erase, insert  // tc:O(n)
@@ -20,14 +20,14 @@ int main()
     vec.push_back(2);  // now size 2   capacity =2
     vec.push_back(3);  // size 3    but capacity =4  
    
-    // capcity always get double after new element inseted
+    // capcity always get double after new element inserted
     vec.capacity(); // 4
 
     vec.push_back(4);
     vec.push_back(5);
     vec.emplace_back(6);
 
-    for(int value : vec)
+    for(int value : vec)    // for each loop
     {
         cout<<value<<" ";   // 1 2 3 4 5 6
     }
@@ -63,7 +63,7 @@ int main()
     // so vector:  {2,6,7}    
     // vecc.erase(start,end+1);
 
-    // erase adn clear changes size of vector but dont change capacity
+    // erase and clear changes size of vector but dont change capacity
 
     vector<int> v={1,2,3,4,5,6,7};
     v.insert(v.begin() + 2, 100);  // {1,2,100,3,4,5,6,7}
@@ -79,11 +79,11 @@ int main()
             // Iterators in vector::
 
     vec.begin();// points to first element
-    *(vec.begin());  // dereferncing: points avalue of first ele 
+    *(vec.begin());  // dereferncing: points value of first ele 
 
     vec.end();  // points to next indx form last indx
     // if vector = {1,2,3}
-    // *(vec.end());  // not 3    it gives ant garbage value
+    // *(vec.end());  // not 3    it gives garbage value
 
     vector<int> v1={1,2,3,4};
 
@@ -113,5 +113,37 @@ int main()
     {
         cout<< *(rit);  // 4 3 2 1
     }
+
+     for(auto rit = v1.begin(); rit!= v1.end(); rit++)   
+    {
+        cout<< *(rit);  // 1 2 3 4 
+    }
     // by auto c++ automatically understand which type of varible we are trying to use
 }
+
+/*
+    Brief Description of 'auto' in C++:
+    
+    The 'auto' keyword (introduced in C++11) automatically deduces the data type 
+    of a variable at compile time based on its initializer.
+    
+    Benefits:
+    - Reduces verbosity with complex type names (e.g., iterators)
+    - Improves code maintainability when underlying types change
+    - Prevents type mismatch errors
+    - Makes generic programming easier
+    
+    Examples:
+    auto x = 5;                           // int
+    auto y = 3.14;                        // double
+    auto str = "Hello";                   // const char*
+    auto it = v1.begin();                 // vector<int>::iterator
+    auto rit = v1.rbegin();               // vector<int>::reverse_iterator
+    
+    Important Notes:
+    - Variable must be initialized when declared with auto
+    - Compiler deduces type from the initialization expression
+    - Use 'auto&' for references and 'const auto&' for const references
+    - Does not deduce reference or const qualifiers by default
+*/
+
