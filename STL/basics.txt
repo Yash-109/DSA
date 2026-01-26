@@ -2,4 +2,7 @@ STL = standard template library
 
 4 parts:
 
-containers       Iterators        Algorithms         Functors
+containers       Iterators        Algorithms         Functors 
+
+order of files:
+vector --> list --> deque --> pair --> stack --> queue --> --> priority queue --> map

@@ -3,6 +3,9 @@
 #include<vector>
 using namespace std;
 
+
+                // we dont include #include<pair> to use pair
+
 int main()
 {
     pair<int, int> p = {1,5};
