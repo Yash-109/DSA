@@ -5,4 +5,5 @@ STL = standard template library
 containers       Iterators        Algorithms         Functors 
 
 order of files:
-vector --> list --> deque --> pair --> stack --> queue --> --> priority queue --> map
+vector --> list --> deque --> pair --> stack --> queue --> --> priority queue --> map --> set 
+--> sorting  --> reverse

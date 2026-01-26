@@ -71,6 +71,7 @@ int main()
    m1.erase(m1.find("tv")); // only one delte     remains 3
 
     /*
+    have to #include<unordered_map>
      most used::   Unordered map:data stores randomly instead sorted 
     keys cant be duplicated
     */
