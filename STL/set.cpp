@@ -62,6 +62,14 @@ int main()
 
     in unorder set lower and uper bound cant be calculated as they are not sortd
     tc : O(1). That is why unorder map and unordered set widely used for lesser tc
+
+
+std::set / std::unordered_set
+insert() – inserts unique element
+find() – finds element
+count() – checks existence (0 or 1)
+erase() – removes element
+size() – returns number of elements
     */
 
 }

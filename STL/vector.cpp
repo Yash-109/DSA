@@ -122,6 +122,29 @@ int main()
 }
 
 /*
+std::vector
+
+push_back() – adds element at the end
+pop_back() – removes last element
+size() – returns number of elements
+clear() – removes all elements
+begin() / end() – returns iterator to start/end
+erase() – removes element(s) by position
+insert() – inserts element(s) at position
+
+
+<algorithm>
+
+sort() – sorts elements in range
+reverse() – reverses elements in range
+max_element() – returns iterator to largest element
+min_element() – returns iterator to smallest element
+binary_search() – checks if element exists in sorted range
+count() – counts occurrences of a value
+find() – finds element in a range
+unique() – removes consecutive duplicates
+
+
     Brief Description of 'auto' in C++:
     
     The 'auto' keyword (introduced in C++11) automatically deduces the data type 

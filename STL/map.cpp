@@ -86,5 +86,13 @@ int main()
     in map insert,erase,count use O(logn) tc
     in unordered map has O(1)
 
+
+std::map / std::unordered_map
+insert() – inserts key-value pair
+find() – finds element by key
+count() – checks if key exists (0 or 1)
+erase() – removes element by key or iterator
+size() – returns number of elements
+
     */
 }

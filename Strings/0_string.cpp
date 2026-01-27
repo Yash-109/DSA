@@ -105,3 +105,16 @@ int main()
     cout<<s5;  // dlrow olleh
     return 0;
 }
+
+/*
+std::string
+
+find() – finds first occurrence of a substring or character
+substr() – extracts a substring from a string
+erase() – removes characters from a string
+insert() – inserts characters at a given position
+push_back() – adds a character at the end
+pop_back() – removes last character
+length() / size() – returns string length
+
+*/
