@@ -12,7 +12,7 @@ using namespace std;
         
         if(p1.first<p2.first) return true;  // this condition is for same element in 2nd place in pairs
         else return false;              // ex. pairs are {1,5}, {3,6}, {3,5}, {7,5}
-                                        // so ans     1,5  3,5   7,5   3,6
+                                        // so ans       1,5  3,5   7,5   3,6
     }
 
 int main()
