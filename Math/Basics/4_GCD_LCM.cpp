@@ -9,7 +9,7 @@ int gcdBruteForce(int a, int b) {
     
     for (int i = minVal; i >= 1; i--) {
         if (a % i == 0 && b % i == 0) {
-            return i;
+            return i;  // here we return the first i so we will get greatest not smallest
         }
     }
     return 1;

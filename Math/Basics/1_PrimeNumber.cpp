@@ -31,7 +31,7 @@ void printPrimesUpToN(int n)
 }
 
 // Time Complexity: O(n log log n), Space Complexity: O(n)
-// Sieve of Eratosthenes - LeetCode 204
+// Sieve of Eratosthenes Algorithm - LeetCode 204  
 class Solution {
 public:
     int countPrimes(int n) {

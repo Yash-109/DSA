@@ -16,6 +16,20 @@ public:
         if (x == -1 && n % 2 == 0) return 1.0;   // (-1)^even = 1
         if (x == -1 && n % 2 != 0) return -1.0;  // (-1)^odd = -1
 
+        /*
+        CORE LOGIC: Binary Exponentiation
+        Instead of multiplying x, n times (O(n)), we use binary representation of n
+        
+        Example: 2^10
+        10 in binary = 1010
+        2^10 = 2^8 * 2^2 = 256 * 4 = 1024
+        
+        Steps:
+        1. If current bit is 1 → multiply ans by x
+        2. Square x for next bit
+        3. Right shift n (divide by 2)
+        */
+
         // ✅ Convert exponent 'n' to long (to avoid overflow for INT_MIN)
         long binaryform = n;   // store n in a long variable
 
