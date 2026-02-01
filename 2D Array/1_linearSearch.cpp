@@ -6,7 +6,7 @@ using namespace std;
 // ============ LINEAR SEARCH ============
 // Search for a key in 2D matrix and return its position (i, j)
 // Time Complexity: O(rows * cols)
-pair<int,int> linearSearch(int mat[][3], int rows, int cols, int key)  // we must specify no of colums evry time
+pair<int,int> linearSearch(int mat[][3], int rows, int cols, int key)  // we must specify no of colums every time
 {
     for(int i=0;i<rows;i++)
     {
@@ -71,15 +71,28 @@ int diagonalSum(int mat[][4], int n)
 int diagonalSumOptimal(int mat[][4], int n)
 {
     int sum = 0;
-    //pd : i = j
-    //sd : j = n-i-1
+    //pd : i = j   // Primary diagonal index: (i, i)
+    //sd : j = n-i-1  // Secondary diagonal index: (i, n - i - 1)
+
+//     i	Primary (i,i)	Secondary (i,4-i)	Same?
+//     0	(0,0)	(0,4)	No
+//     1	(1,1)	(1,3)	No
+//     2	(2,2)	(2,2)	Yes (center)
+//     3	(3,3)	(3,1)	No
+
+        // For all non-center rows, this condition is true, 
+        //so the secondary diagonal element is added.
+
+        //At the center row, i == n - i - 1, so the condition is false,
+        // and the element is not added again.
     
     for(int i=0; i<n; i++)
     {
         sum += mat[i][i];  // Primary diagonal
         
         if(i != n-i-1) {   // Secondary diagonal
-            sum += mat[i][n-i-1];  // Avoid counting center element twice in odd-sized matrix
+    // if(i != n - i - 1) prevents adding the same center element twice when both diagonals intersect in an odd-sized matrix.
+            sum += mat[i][n-i-1];  
         }
     }
     return sum;
