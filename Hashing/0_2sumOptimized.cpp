@@ -11,6 +11,8 @@
  * Space Complexity: O(n) - hash map storage
  */
 
+
+ // of brute force and better approach check 2sum.cpp in array folder
 #include<iostream>
 #include<vector>
 #include<unordered_map>
