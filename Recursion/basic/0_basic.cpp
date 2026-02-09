@@ -1,22 +1,33 @@
+/*
+ * Recursion Basics
+ * 
+ * Fundamental concepts and examples of recursion
+ * Every loop can be written as recursion and vice versa
+ * Key components: Base case, Recursive case, Call stack
+ */
+
 #include<iostream>
 using namespace std;
 
-/*
-Each task done by loop can be done by recursion amd every problem done by recursion can be done by loop
-*/
-
+// Print numbers from n to 1 in descending order
+// Time Complexity: O(n), Space Complexity: O(n)
 void printNums(int n){
+    // Base case: stop when n <= 0
     if(n>0){
-    cout<<n<<endl;
-    printNums(n-1);
+        cout<<n<<endl;
+        printNums(n-1);  // Recursive call with smaller problem
     }
     else return;
 }
 
-int factorial(int n){ // TC: o(n)
-    if(n == 0){ // Base case in recursion: lowest value that you know  ex. 0! = 1   so 0 is base case
+// Calculate factorial of n
+// Time Complexity: O(n), Space Complexity: O(n) for call stack
+int factorial(int n){
+    // Base case: 0! = 1
+    if(n == 0){
         return 1;
     }
+    // Recursive case: n! = n * (n-1)!
     return n * factorial(n-1);
 
     // Recursion works because the call stack is LIFO
@@ -26,11 +37,15 @@ int factorial(int n){ // TC: o(n)
     // | factorial(3) |
 }
 
+// Calculate sum of first n natural numbers
+// Time Complexity: O(n), Space Complexity: O(n)
 int sum(int n)
 {
+    // Base case
     if(n == 1){
         return 1;
     }
+    // Recursive case: sum(n) = n + sum(n-1)
     return n + sum(n-1);
 }
 // Calls going down (push)
