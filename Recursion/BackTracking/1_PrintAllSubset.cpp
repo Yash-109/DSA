@@ -24,14 +24,15 @@ void printSubsets(vector<int>& arr, vector<int>& ans, int i) {
         return;
     }   
 
-    // Include current element in subset
+    // Include current element in subset (make choice)
     ans.push_back(arr[i]);
     printSubsets(arr, ans, i + 1);
 
     // Backtrack: remove element to explore other possibilities
     ans.pop_back();
 
-    // Exclude current element from subset
+    // Exclude current element from subset (undo choice)
+    printSubsets(arr, ans, i + 1);
 }
 
 int main() {
@@ -44,7 +45,7 @@ int main() {
 }
 
 
-// leetcode problem: 78:  same time complexity ans all but returning same array insted of printing it 
+// leetcode problem: 78:  same time complexity same logic but returning same array insted of printing it 
 class Solution {
 public:
     void getAllSubsets(
@@ -62,7 +63,7 @@ public:
         ans.push_back(nums[i]);
         getAllSubsets(nums, ans, i + 1, allSubsets);
 
-        ans.pop_back();
+        ans.pop_back();  // this is the most important step for backtracking
 
         // exclude
         getAllSubsets(nums, ans, i + 1, allSubsets);
