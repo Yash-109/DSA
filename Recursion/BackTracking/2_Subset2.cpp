@@ -6,11 +6,6 @@
  * Generate all unique subsets from an array that may contain duplicates
  * Key Insight: When excluding an element, skip all its duplicates to avoid repetition
  * 
- * Related Files:
- * - 1_PrintAllSubset.cpp: Basic subset generation without duplicates
- * - Arrays/14_sortArrayby0-1-2.cpp: Shows array manipulation patterns
- * - Recursion/basic/0_basic.cpp: Recursion fundamentals
- * 
  * Time Complexity: O(2^n) - where n is array size
  * Space Complexity: O(n) - recursion depth + temporary storage
  * 

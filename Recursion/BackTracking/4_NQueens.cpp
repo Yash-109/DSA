@@ -6,7 +6,7 @@
  * Place N queens on an N×N chessboard such that no two queens attack each other
  * Queens attack horizontally, vertically, and diagonally
  * 
- * Time Complexity: O(n!) - exploring valid queen placements
+ * Time Complexity: O(n!) - exploring valid queen placements 
  * Space Complexity: O(n²) - board storage + O(n) recursion depth
  * 
  * Logic:

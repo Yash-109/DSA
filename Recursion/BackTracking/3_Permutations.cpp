@@ -6,12 +6,6 @@
  * Generate all possible permutations of a given array
  * Uses swap-based approach for in-place generation
  * 
- * Related Files:
- * - 1_PrintAllSubset.cpp: Shows include/exclude backtracking pattern
- * - Strings/3_permutation.cpp: String permutations (similar concept)
- * - Arrays/16_next_permutation.cpp: Next lexicographic permutation
- * - Recursion/basic/0_basic.cpp: Recursion basics
- * 
  * Time Complexity: O(n! * n) - n! permutations, n to copy each
  * Space Complexity: O(n) - recursion depth
  * 
