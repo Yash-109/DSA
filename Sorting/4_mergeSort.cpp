@@ -36,7 +36,7 @@ void merge(vector<int> &arr, int st, int mid, int end) {
 
     // Compare elements from both halves and add smaller one to temp
     while (i <= mid && j <= end) {
-        if (arr[i] <= arr[j]) {
+        if (arr[i] <= arr[j]) {        // for desceneding order do >= only
             temp.push_back(arr[i]);
             i++;
         } else {
