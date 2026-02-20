@@ -93,7 +93,7 @@ int main() {
     
     // Test Case 1: 4-Queens
     cout << "N-Queens Problem (n = 4)" << endl;
-    cout << "======================" << endl;
+    cout << "=======================" << endl;
     vector<vector<string>> result1 = sol.solveNQueens(4);
     cout << "Total solutions: " << result1.size() << endl << endl;
     
