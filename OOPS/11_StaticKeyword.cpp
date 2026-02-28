@@ -136,6 +136,6 @@ int main(){
     cout<< "end of main function"<<endl;
 
     return 0;
-    // obj3's destructor is called HERE (when program exits)
+    // obj3's destructor is called here (when program exits)
 
 }
