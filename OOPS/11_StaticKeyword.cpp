@@ -133,7 +133,7 @@ int main(){
     // Note: obj3's destructor is NOT called here (at closing brace)
     // It will be called when main() ends
 
-    cout<< "end of main function"<<endl;
+    cout<< "end of main function."<<endl;
 
     return 0;
     // obj3's destructor is called here (when program exits)
