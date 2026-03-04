@@ -78,7 +78,7 @@ public:
     void getInfo() {
         cout << "name: " << name << endl;
         cout << "age: " << age << endl;
-        cout << "rollno: " << rollno << endl;
+        cout << "rollnumber: " << rollno << endl;
     }
 };
 
