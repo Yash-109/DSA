@@ -23,11 +23,11 @@ public:
 
 
     // 1.
-    void push_front(int val){   
+    void push_front(int val){    // O(1)
 
         // create new Node
-        Node* newNode = new Node(val);  // this is dynamic declaration
-       // Node* newNode(val); // static declaration so can't use or call in main function
+        Node* newNode = new Node(val);  // dynamic allocation on heap, persists beyond function scope
+       // Stack allocation (Node newNode(val);) would be destroyed when function returns
 
 
        if(head == NULL){
@@ -47,7 +47,7 @@ public:
     } 
 
     //2.
-    void push_back(int val){
+    void push_back(int val){  // O(1)      if we have not tail pointer: O(n)
         Node* newNode = new Node(val);
 
         if(head == NULL){
@@ -62,7 +62,7 @@ public:
     }
 
     //3.
-    void pop_front(){
+    void pop_front(){ // O(1)
         if(head == NULL){
             cout<< "LL is empty\n";
             return;
@@ -80,7 +80,7 @@ public:
     }
 
     //4.
-    void pop_back(){
+    void pop_back(){  // O(n)
         if(head == NULL){
             cout<<"LL is empty\n";
             return;
@@ -92,11 +92,55 @@ public:
         }
 
         temp->next = NULL;
-        delete tail;  // here we are deleting the data which is in tail node
-        tail = temp;  // assigning value in tail node
+        delete tail;  // deleting the tail node and freeing its memory
+        tail = temp;  // updating tail pointer to point to the new last node
     }
 
-    void printLL(){
+    //5. 
+    void insert(int val,int pos){  // O(n)
+        if(pos<0){
+            cout<<"Invalid Position\n";
+            return;
+        }
+
+        if(pos==0){
+            push_front(val);
+            return;
+        }
+
+        Node* temp = head;
+        for(int i = 0; i<pos-1; i++){
+            if(temp == NULL){
+                cout<<"Invalid Position\n";
+                return;
+            }
+            temp = temp->next;
+        }
+
+        Node* newNode = new Node(val);
+        newNode->next = temp->next;
+        temp->next = newNode;
+    }
+
+    // 6.
+    int search(int key){    //O(n)
+        Node* temp = head;
+        int indx = 0;
+
+        while(temp != NULL){
+            if(temp->data == key){
+                return indx;
+            }
+
+            temp = temp->next;
+            indx++;
+        }
+
+        return -1;  // for invalid key
+    }
+
+    // 7.
+    void printLL(){  // O(n)
         Node* temp = head;
 
         while(temp!=NULL){
@@ -124,5 +168,14 @@ int main(){
 
     ll.pop_back();
     ll.printLL(); // 2 -> 1 -> NULL
+
+    ll.push_front(3);
+    ll.printLL();  // 3 -> 2 -> 1 -> NULL
+
+    ll.insert(4,1);
+    ll.printLL();  // 3 -> 4 -> 2 -> 1 -> NULL
+
+    cout<<ll.search(4)<<endl;  // 1
+
     return 0;
 }
