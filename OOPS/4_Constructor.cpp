@@ -100,7 +100,7 @@ int main(){
     cout << endl;
 
     // parameterized constructor
-    Teacher t2("yashhh", "ce", "maths", 85000);
+    Teacher t2("yash", "ce", "maths", 85000);
     t2.getInfo();
     cout << endl;
 
