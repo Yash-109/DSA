@@ -1,4 +1,12 @@
 
+#include <cstddef>  // for NULL
+
+// Definition for singly-linked list (LeetCode format)
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode(int x) : val(x), next(NULL) {}
+};
 /*
  * Problem: 141. Linked List Cycle
  * Difficulty: Easy
