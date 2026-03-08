@@ -73,7 +73,7 @@ public:
 
         // Move fast pointer 2 steps and slow pointer 1 step
         // Loop continues until fast reaches end
-        while(fast != nullptr && fast->next != nullptr) {
+        while(fast != nullptr && fast->next != nullptr) {  // first condition for even size and second consdtition for odd sized LL
             slow = slow->next;       // Move slow by 1 step
             fast = fast->next->next; // Move fast by 2 steps
         }
