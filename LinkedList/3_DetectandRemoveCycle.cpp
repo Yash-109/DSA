@@ -33,15 +33,6 @@ struct ListNode {
  * Space Complexity: O(1) - only using 2 pointers
  */
 
-/**
- * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     ListNode *next;
- *     ListNode(int x) : val(x), next(NULL) {}
- * };
- */
-
 // Floyd's Cycle Detection Algorithm (Tortoise and Hare Algorithm)
 // Time Complexity: O(n), Space Complexity: O(1)
 
