@@ -1,7 +1,7 @@
 # DSA Solutions 🚀
 
 This repository contains my solutions to various Data Structures and Algorithms (DSA) problems.  
-I regularly practice and push code here to improve problem-solving skills.
+I regularly practice and push code here to improve problem-solving skills
 
 ## 📂 Repository Structure
 
