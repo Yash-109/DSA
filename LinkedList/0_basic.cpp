@@ -1,14 +1,14 @@
 #include<iostream>
 using namespace std;
 
-class Node {   // this individual node calss can have mant object like in example 1, 2, 3,..
+class Node {   // this individual node class can have many object like in example 1, 2, 3,..
 public:
     int data;
     Node* next;  // always store address of next node
 
     Node(int val){  // constructor
         data = val;
-        next = NULL;
+        next = nullptr;
     } 
 };
 
@@ -18,7 +18,7 @@ class List {
     
 public:
     List(){
-        head = tail = NULL;
+        head = tail = nullptr;
     }
 
 
@@ -30,7 +30,7 @@ public:
        // Stack allocation (Node newNode(val);) would be destroyed when function returns
 
 
-       if(head == NULL){
+       if(head == nullptr){
         // if LL is empty simply head and tail point to newNode
         head = tail = newNode;
         return;
@@ -54,16 +54,14 @@ public:
             head = tail = newNode;
         }
 
-        else{
-            tail->next = newNode;
-            tail = newNode;
-        }
+        tail->next = newNode;
+        tail = newNode;
 
     }
 
     //3.
     void pop_front(){ // O(1)
-        if(head == NULL){
+        if(head == nullptr){
             cout<< "LL is empty\n";
             return;
         }
@@ -71,7 +69,7 @@ public:
         else{
             Node* temp = head;
             head = head->next;
-            temp->next = NULL;
+            temp->next = nullptr;
             
             delete temp; // deleting the "node" that was dynamically allocated earlier 
             // temp → stack pointer
@@ -81,7 +79,7 @@ public:
 
     //4.
     void pop_back(){  // O(n)
-        if(head == NULL){
+        if(head == nullptr){
             cout<<"LL is empty\n";
             return;
         }

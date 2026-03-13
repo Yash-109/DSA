@@ -19,7 +19,7 @@ struct ListNode {
  * Input: head = [3,2,0,-4], pos = 1 (tail connects to node at index 1)
  * Visual:
  *     3 -> 2 -> 0 -> -4
- *          ↑_____________|
+ *          ↑__________|
  *          (cycle: -4 points back to 2)
  * Output: true (there is a cycle)
  * 
@@ -65,7 +65,7 @@ struct ListNode {
  * Example Walkthrough (with cycle):
  * List with cycle:
  *     1 -> 2 -> 3 -> 4
- *          ↑___________|
+ *          ↑_________|
  *          (4 points back to 2)
  * 
  * Iteration 1: slow=1, fast=1 → slow=2, fast=3
@@ -110,7 +110,7 @@ public:
  * Input: head = [3,2,0,-4], pos = 1 (tail connects to node at index 1)
  * Visual:
  *     3 -> 2 -> 0 -> -4
- *          ↑_____________|
+ *          ↑__________|
  *          (cycle starts at node 2)
  * Output: node with value 2 (cycle start)
  * 
@@ -166,7 +166,7 @@ public:
  * Example Walkthrough:
  * List with cycle:
  *     1 -> 2 -> 3 -> 4 -> 5
- *               ↑___________|
+ *               ↑_________|
  *               (5 points back to 3, cycle starts at node 3)
  * 
  * Phase 1: Detect Cycle
@@ -233,7 +233,7 @@ public:
  * Input: head = [3,2,0,-4], pos = 1 (tail connects to node at index 1)
  * Before removal:
  *     3 -> 2 -> 0 -> -4
- *          ↑_____________|
+ *          ↑__________|
  *          (cycle exists)
  * 
  * After removal:
@@ -277,7 +277,7 @@ public:
  * Example Walkthrough:
  * List with cycle:
  *     1 -> 2 -> 3 -> 4 -> 5
- *               ↑___________|
+ *               ↑_________|
  *               (5 points back to 3, cycle starts at node 3)
  * 
  * Phase 1: Detect Cycle
