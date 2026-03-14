@@ -115,45 +115,37 @@ public:
  * Space Complexity: O(1) - only using 2 pointers
  */
 
-/**
- * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     ListNode *next;
- *     ListNode(int x) : val(x), next(NULL) {}
- * };
- */
 
 // Floyd's Cycle Detection + Starting Node Algorithm
 // Time Complexity: O(n), Space Complexity: O(1)
 
 /*
  * Logic:
- * 
+ 
  * Step 1: Detect if cycle exists (same as Problem 141)
  * - Use slow and fast pointers
  * - If they meet, cycle exists
- * 
+ 
  * Step 2: Find starting node of cycle
  * - After detecting cycle, reset slow to head
  * - Move both slow and fast by 1 step at a time
  * - When they meet again, that's the starting node
- * 
+ 
  * Why does this work?
  * Mathematical proof:
  * Let:
  *   L = distance from head to cycle start
  *   C = cycle length
  *   K = distance from cycle start to meeting point
- * 
+ 
  * When they meet:
  *   - Slow traveled: L + K
  *   - Fast traveled: L + K + nC (where n is number of complete cycles)
  *   - Since fast is 2x slow: 2(L + K) = L + K + nC
  *   - Simplifying: L + K = nC → L = nC - K
- * 
+ 
  * This means: distance from head to cycle start = distance from meeting point to cycle start
- * 
+ 
  * Example Walkthrough:
  * List with cycle:
  *     1 -> 2 -> 3 -> 4 -> 5
@@ -237,14 +229,6 @@ public:
  * Space Complexity: O(1) - only using 2 pointers
  */
 
-/**
- * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     ListNode *next;
- *     ListNode(int x) : val(x), next(NULL) {}
- * };
- */
 
 // Floyd's Cycle Detection + Remove Cycle Algorithm
 // Time Complexity: O(n), Space Complexity: O(1)
