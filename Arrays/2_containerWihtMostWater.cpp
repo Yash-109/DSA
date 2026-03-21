@@ -2,6 +2,44 @@
 // Time Complexity: O(n^2) - brute force approach
 // Space Complexity: O(1) - only using constant extra space
 
+/*
+ * Approach 1 (Brute Force)
+ * ------------------------
+ * - For every pair of lines (i, j), compute width = j - i and height =
+ *   min(height[i], height[j]); water = width * height.
+ * - Track the maximum water over all pairs. Time: O(n^2).
+ *
+ * Approach 2 (Two Pointers - Optimal)
+ * -----------------------------------
+ * - Use two pointers lp (left) and rp (right) starting at the ends.
+ * - At each step, compute width = rp - lp, ht = min(height[lp], height[rp]),
+ *   and update maxWater.
+ * - Move the pointer that has the smaller height inward, because the area is
+ *   limited by the shorter line; moving the taller one cannot increase
+ *   height, but moving the shorter one might find a taller line.
+ * - Continue until lp >= rp. Time: O(n).
+ *
+ * Pseudocode (Two Pointers)
+ * -------------------------
+ *   function maxArea(height):
+ *       lp = 0
+ *       rp = height.size() - 1
+ *       maxWater = 0
+ *
+ *       while lp < rp:
+ *           width = rp - lp
+ *           ht = min(height[lp], height[rp])
+ *           currWater = width * ht
+ *           maxWater = max(maxWater, currWater)
+ *
+ *           if height[lp] < height[rp]:
+ *               lp = lp + 1
+ *           else:
+ *               rp = rp - 1
+ *
+ *       return maxWater
+ */
+
 #include<bits/stdc++.h>
 using namespace std;
 

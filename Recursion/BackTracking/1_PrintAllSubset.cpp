@@ -9,6 +9,35 @@
  * Space Complexity: O(n) - recursion call stack depth
  */
 
+/*
+ * Pseudocode: Print all subsets (include / exclude)
+ *
+ * function printSubsets(arr, current, i):
+ *     // i is current index in arr
+ *
+ *     // base case: processed all elements
+ *     if i == size(arr):
+ *         print elements of current on one line
+ *         return
+ *
+ *     // 1) include arr[i]
+ *     append arr[i] to current
+ *     printSubsets(arr, current, i + 1)
+ *
+ *     // backtrack: remove last element
+ *     remove last element from current
+ *
+ *     // 2) exclude arr[i]
+ *     printSubsets(arr, current, i + 1)
+ *
+ *
+ * // wrapper to start from index 0 with empty subset
+ * function main():
+ *     arr = [1, 2, 3]
+ *     current = []
+ *     printSubsets(arr, current, 0)
+ */
+
 #include <iostream>
 #include <vector>
 using namespace std;

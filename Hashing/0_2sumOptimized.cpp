@@ -11,6 +11,26 @@
  * Space Complexity: O(n) - hash map storage
  */
 
+/*
+ * Pseudocode (Hash Map Two Sum)
+ * -----------------------------
+ *   function twoSum(arr, target):
+ *       m = empty hashmap from value -> index
+ *       ans = empty list
+ *
+ *       for i from 0 to arr.size()-1:
+ *           first = arr[i]
+ *           sec   = target - first
+ *
+ *           if sec exists in m:          // found complement earlier
+ *               ans = [i, m[sec]]
+ *               break
+ *
+ *           m[first] = i                // store current value with index
+ *
+ *       return ans
+ */
+
 
  // of brute force and better approach check 2sum.cpp in array folder
 #include<iostream>

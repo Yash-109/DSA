@@ -33,6 +33,23 @@ struct ListNode {
  * Space Complexity: O(1) - only using 2 pointers
  */
 
+/*
+ * Pseudocode (Detect Cycle - Problem 141)
+ * --------------------------------------
+ *   function hasCycle(head):
+ *       slow = head
+ *       fast = head
+ *
+ *       while fast != NULL and fast.next != NULL:
+ *           slow = slow.next
+ *           fast = fast.next.next
+ *
+ *           if slow == fast:
+ *               return true
+ *
+ *       return false
+ */
+
 // Floyd's Cycle Detection Algorithm (Tortoise and Hare Algorithm)
 // Time Complexity: O(n), Space Complexity: O(1)
 
@@ -272,6 +289,60 @@ public:
  * 
  * After removal:
  *     1 -> 2 -> 3 -> 4 -> 5 -> NULL ✓
+ */
+
+/*
+ * Pseudocode (Detect Cycle Start - Problem 142)
+ * --------------------------------------------
+ *   function detectCycle(head):
+ *       slow = head
+ *       fast = head
+ *
+ *       // phase 1: detect meeting point
+ *       while fast != NULL and fast.next != NULL:
+ *           slow = slow.next
+ *           fast = fast.next.next
+ *           if slow == fast:
+ *               break
+ *
+ *       if fast == NULL or fast.next == NULL:
+ *           return NULL      // no cycle
+ *
+ *       // phase 2: find cycle start
+ *       slow = head
+ *       while slow != fast:
+ *           slow = slow.next
+ *           fast = fast.next
+ *
+ *       return slow          // start of cycle
+ *
+ * Pseudocode (Remove Cycle)
+ * -------------------------
+ *   function removeCycle(head):
+ *       slow = head
+ *       fast = head
+ *
+ *       // detect meeting point
+ *       while fast != NULL and fast.next != NULL:
+ *           slow = slow.next
+ *           fast = fast.next.next
+ *           if slow == fast:
+ *               break
+ *
+ *       if fast == NULL or fast.next == NULL:
+ *           return      // no cycle
+ *
+ *       slow = head
+ *       prev = NULL
+ *
+ *       // move both one step; prev tracks node before fast
+ *       while slow != fast:
+ *           slow = slow.next
+ *           prev = fast
+ *           fast = fast.next
+ *
+ *       // fast/slow at cycle start; prev is last node in cycle
+ *       prev.next = NULL
  */
 
 class Solution {

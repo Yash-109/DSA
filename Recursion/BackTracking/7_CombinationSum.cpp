@@ -20,6 +20,36 @@
  * Difference from Subsets: Elements can be reused (idx stays same on include)
  */
 
+/*
+ * Pseudocode: Combination Sum (reuse allowed)
+ *
+ * function solve(arr, idx, target, current, ans):
+ *
+ *     // found valid combination
+ *     if target == 0:
+ *         add copy of current to ans
+ *         return
+ *
+ *     // out of bounds or target overshot
+ *     if idx == size(arr) OR target < 0:
+ *         return
+ *
+ *     // 1) include arr[idx] (can reuse same index)
+ *     append arr[idx] to current
+ *     solve(arr, idx, target - arr[idx], current, ans)
+ *     remove last element from current        // backtrack
+ *
+ *     // 2) exclude arr[idx] and move to next index
+ *     solve(arr, idx + 1, target, current, ans)
+ *
+ *
+ * function combinationSum(arr, target):
+ *     ans = empty list of lists
+ *     current = empty list
+ *     solve(arr, 0, target, current, ans)
+ *     return ans
+ */
+
 #include <iostream>
 #include <vector>
 using namespace std;

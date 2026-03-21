@@ -12,6 +12,32 @@
  * 2. Optimal: Prefix Sum + HashMap (O(n))
  */
 
+/*
+ * Pseudocode (Optimal: Prefix Sum + HashMap)
+ * -----------------------------------------
+ *   function subarraySum(nums, k):
+ *       count = 0
+ *       prefixSum = 0
+ *       freq = empty hashmap from int -> int
+ *
+ *       for each element x in nums:
+ *           prefixSum = prefixSum + x
+ *
+ *           // case 2: subarray [0..j] has sum k
+ *           if prefixSum == k:
+ *               count = count + 1
+ *
+ *           // case 1: subarrays ending at j with sum k
+ *           need = prefixSum - k
+ *           if need exists in freq:
+ *               count = count + freq[need]
+ *
+ *           // store current prefix sum for future positions
+ *           freq[prefixSum] = freq[prefixSum] + 1
+ *
+ *       return count
+ */
+
 #include <iostream>
 #include <vector>
 #include <unordered_map>

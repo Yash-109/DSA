@@ -6,6 +6,38 @@
  * Compress a character array in-place and return the new length.
  */
 
+/*
+ * Pseudocode (In-place Run Length Encoding)
+ * ----------------------------------------
+ *   function compress(chars):
+ *       n = chars.size()
+ *       write = 0
+ *
+ *       i = 0
+ *       while i < n:
+ *           ch = chars[i]
+ *           count = 0
+ *
+ *           // count consecutive occurrences of ch
+ *           while i < n and chars[i] == ch:
+ *               i = i + 1
+ *               count = count + 1
+ *
+ *           // write character
+ *           chars[write] = ch
+ *           write = write + 1
+ *
+ *           // write count digits if > 1
+ *           if count > 1:
+ *               str = string representation of count
+ *               for each digit d in str:
+ *                   chars[write] = d
+ *                   write = write + 1
+ *
+ *       resize chars to length write
+ *       return write
+ */
+
 #include <iostream>
 #include <vector>
 #include <string>

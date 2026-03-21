@@ -9,6 +9,51 @@
  * Space Complexity: O(1)
  */
 
+/*
+ * Approach (Pivot + Swap + Reverse)
+ * ---------------------------------
+ * - We want the smallest permutation that is greater than the current one.
+ * - Steps:
+ *   1) Scan from right to left to find the first index 'pivot' such that
+ *        A[pivot] < A[pivot + 1].
+ *      - If no such index exists, the array is in descending order; simply
+ *        reverse the whole array to get the lowest (sorted ascending).
+ *   2) From the right end again, find the first element A[i] that is
+ *        strictly greater than A[pivot]. Swap A[i] and A[pivot].
+ *   3) Finally, reverse the subarray from pivot+1 to end to make it the
+ *        smallest possible (sorted ascending) suffix.
+ *
+ * Pseudocode
+ * ---------
+ *   function nextPermutation(A):
+ *       n = A.size()
+ *       pivot = -1
+ *
+ *       // step 1: find pivot
+ *       for i from n-2 down to 0:
+ *           if A[i] < A[i+1]:
+ *               pivot = i
+ *               break
+ *
+ *       if pivot == -1:
+ *           reverse A[0 .. n-1]
+ *           return
+ *
+ *       // step 2: find element just larger than A[pivot]
+ *       for i from n-1 down to pivot+1:
+ *           if A[i] > A[pivot]:
+ *               swap A[i], A[pivot]
+ *               break
+ *
+ *       // step 3: reverse suffix
+ *       left  = pivot + 1
+ *       right = n - 1
+ *       while left < right:
+ *           swap A[left], A[right]
+ *           left  = left + 1
+ *           right = right - 1
+ */
+
 #include <vector>
 #include <algorithm>
 using namespace std;

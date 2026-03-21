@@ -8,6 +8,38 @@
  * Example: "  the sky  is blue  " -> "blue is sky the"
  */
 
+/*
+ * Pseudocode (Reverse String Then Reverse Each Word)
+ * --------------------------------------------------
+ *   function reverseWords(s):
+ *       n = length(s)
+ *       ans = empty string
+ *
+ *       reverse s in-place (entire string)
+ *
+ *       i = 0
+ *       while i < n:
+ *           word = empty string
+ *
+ *           // build next word (skip spaces)
+ *           while i < n and s[i] != ' ':
+ *               append s[i] to word
+ *               i = i + 1
+ *
+ *           reverse characters of word
+ *
+ *           if word is not empty:
+ *               ans = ans + " " + word
+ *
+ *           // skip extra spaces between words
+ *           i = i + 1
+ *
+ *       if ans is not empty:
+ *           return substring of ans from index 1 onward  // remove first space
+ *       else:
+ *           return ans
+ */
+
 #include <iostream>
 #include <string>
 #include <algorithm>

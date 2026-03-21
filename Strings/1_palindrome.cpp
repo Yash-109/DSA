@@ -6,6 +6,32 @@
  * Check if a string is a palindrome (considering only alphanumeric characters and ignoring case)
  */
 
+/*
+ * Pseudocode (Two-Pointer with Alphanumeric Filter)
+ * -------------------------------------------------
+ *   function isAlphaNum(ch):
+ *       return (ch is digit) OR (lowercase(ch) between 'a' and 'z')
+ *
+ *   function isPalindrome(s):
+ *       st  = 0
+ *       end = length(s) - 1
+ *
+ *       while st < end:
+ *           while st < end and isAlphaNum(s[st]) is false:
+ *               st = st + 1
+ *
+ *           while st < end and isAlphaNum(s[end]) is false:
+ *               end = end - 1
+ *
+ *           if lowercase(s[st]) != lowercase(s[end]):
+ *               return false
+ *
+ *           st  = st + 1
+ *           end = end - 1
+ *
+ *       return true
+ */
+
 #include<iostream>
 #include<string>
 using namespace std;

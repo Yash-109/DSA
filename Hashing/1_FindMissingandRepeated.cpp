@@ -12,6 +12,32 @@
  * Space Complexity: O(n^2) - hash set storage
  */
 
+/*
+ * Pseudocode (Hash Set + Sum Formula)
+ * -----------------------------------
+ *   function findMissingAndRepeatedValues(grid):
+ *       n = grid.size()
+ *       s = empty hash set
+ *       actualSum = 0
+ *       repeatedNum = -1
+ *
+ *       // scan all cells
+ *       for i from 0 to n-1:
+ *           for j from 0 to n-1:
+ *               val = grid[i][j]
+ *               actualSum = actualSum + val
+ *
+ *               if val already in set s:
+ *                   repeatedNum = val
+ *               else:
+ *                   insert val into s
+ *
+ *       expectedSum = (n*n) * (n*n + 1) / 2
+ *       missingNum = expectedSum + repeatedNum - actualSum
+ *
+ *       return [repeatedNum, missingNum]
+ */
+
 #include<iostream>
 #include<vector>
 #include<unordered_set>

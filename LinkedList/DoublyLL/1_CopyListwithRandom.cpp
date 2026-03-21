@@ -56,6 +56,40 @@ public:
  * Space Complexity: O(n)   - extra hashmap to store mapping
  */
 
+/*
+ * Pseudocode (HashMap-Based Deep Copy)
+ * ------------------------------------
+ *   function copyRandomList(head):
+ *       if head == NULL:
+ *           return NULL
+ *
+ *       mapping = empty hashmap from Node* -> Node*
+ *
+ *       // step 1: copy nodes and next pointers
+ *       newHead = new Node(head.val)
+ *       mapping[head] = newHead
+ *
+ *       oldTemp = head.next
+ *       newTemp = newHead
+ *
+ *       while oldTemp != NULL:
+ *           copyNode = new Node(oldTemp.val)
+ *           mapping[oldTemp] = copyNode
+ *           newTemp.next = copyNode
+ *           oldTemp = oldTemp.next
+ *           newTemp = newTemp.next
+ *
+ *       // step 2: assign random pointers
+ *       oldTemp = head
+ *       newTemp = newHead
+ *       while oldTemp != NULL:
+ *           newTemp.random = mapping[oldTemp.random]
+ *           oldTemp = oldTemp.next
+ *           newTemp = newTemp.next
+ *
+ *       return newHead
+ */
+
 #include <unordered_map>
 using namespace std;
 

@@ -8,6 +8,32 @@
  * Space Complexity: O(log n) - recursion call stack
  */
 
+/*
+ * Pseudocode: Recursive Binary Search
+ *
+ * function binSearch(arr, target, st, end):
+ *     // base case: search space exhausted
+ *     if st > end:
+ *         return -1
+ *
+ *     mid = st + (end - st) / 2
+ *
+ *     // target found at mid
+ *     if arr[mid] == target:
+ *         return mid
+ *
+ *     // target lies in right half
+ *     else if arr[mid] < target:
+ *         return binSearch(arr, target, mid + 1, end)
+ *
+ *     // target lies in left half
+ *     else:
+ *         return binSearch(arr, target, st, mid - 1)
+ *
+ * function search(arr, target):
+ *     return binSearch(arr, target, 0, size(arr) - 1)
+ */
+
 #include <iostream>
 #include <vector>
 using namespace std;

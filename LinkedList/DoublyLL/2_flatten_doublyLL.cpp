@@ -48,6 +48,44 @@ public:
  *                            of the multilevel list
  */
 
+/*
+ * Pseudocode (Recursive DFS Flatten)
+ * ---------------------------------
+ *   function flatten(head):
+ *       if head == NULL:
+ *           return head
+ *
+ *       curr = head
+ *
+ *       while curr != NULL:
+ *           if curr.child == NULL:
+ *               curr = curr.next
+ *               continue
+ *
+ *           // save original next
+ *           nextNode = curr.next
+ *
+ *           // step 1: flatten child and attach
+ *           childHead = flatten(curr.child)
+ *           curr.next = childHead
+ *           childHead.prev = curr
+ *           curr.child = NULL
+ *
+ *           // step 2: move to tail of child list
+ *           tail = curr
+ *           while tail.next != NULL:
+ *               tail = tail.next
+ *
+ *           // step 3: reattach saved next
+ *           if nextNode != NULL:
+ *               tail.next = nextNode
+ *               nextNode.prev = tail
+ *
+ *           curr = nextNode
+ *
+ *       return head
+ */
+
 class Solution {
 public:
     Node* flatten(Node* head) {

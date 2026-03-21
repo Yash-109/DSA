@@ -11,6 +11,22 @@
  * Space Complexity: O(1) - only using 3 pointers
  */
 
+/*
+ * Pseudocode (Iterative 3-Pointer Reversal)
+ * ----------------------------------------
+ *   function reverseList(head):
+ *       prev = NULL
+ *       curr = head
+ *
+ *       while curr != NULL:
+ *           nextNode = curr.next      // store next
+ *           curr.next = prev         // reverse link
+ *           prev = curr              // move prev forward
+ *           curr = nextNode          // move curr forward
+ *
+ *       return prev   // new head of reversed list
+ */
+
 class ListNode {
 public:
     int val;

@@ -13,6 +13,16 @@ using namespace std;
  // and only the single number will remain
  // Time Complexity: O(n), Space Complexity: O(1)
 
+ /*
+  * Pseudocode (XOR Approach)
+  * -------------------------
+  *   function singleNumber(nums):
+  *       ans = 0
+  *       for each value x in nums:
+  *           ans = ans XOR x
+  *       return ans
+  */
+
 class Solution {
 public:
     int singleNumber(vector<int>& nums) {

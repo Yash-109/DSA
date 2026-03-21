@@ -8,6 +8,21 @@
  * Space Complexity: O(n) - recursion call stack
  */
 
+/*
+ * Pseudocode: Check if array is sorted using recursion
+ *
+ * function isSorted(arr, n):
+ *     // base case: 0 or 1 element is always sorted
+ *     if n == 0 or n == 1:
+ *         return true
+ *
+ *     // check last two elements and recurse on remaining prefix
+ *     if arr[n - 1] > arr[n - 2] AND isSorted(arr, n - 1) is true:
+ *         return true
+ *     else:
+ *         return false
+ */
+
 #include<iostream>
 #include<vector>
 using namespace std;

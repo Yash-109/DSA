@@ -18,6 +18,24 @@
  * - Time complexity: O(n log log n) - much better than O(n√n)
  */
 
+/*
+ * Pseudocode (Sieve of Eratosthenes for Count Primes)
+ * ---------------------------------------------------
+ *   function countPrimes(n):
+ *       isPrime = boolean array of size n+1, initialized to true
+ *       count = 0
+ *
+ *       for i from 2 to n-1:
+ *           if isPrime[i] == true:
+ *               count = count + 1
+ *
+ *               // mark all multiples of i as non-prime
+ *               for j from 2*i to n-1 step i:
+ *                   isPrime[j] = false
+ *
+ *       return count
+ */
+
 #include <iostream>
 #include <vector>
 using namespace std;

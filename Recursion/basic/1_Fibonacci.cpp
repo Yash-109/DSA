@@ -9,6 +9,21 @@
  * Space Complexity: O(n) - recursion call stack depth
  */
 
+/*
+ * Pseudocode: Recursive Fibonacci
+ *
+ * function fibonacci(n):
+ *     // base cases
+ *     if n == 0 or n == 1:
+ *         return n
+ *
+ *     // recursive case: F(n) = F(n-1) + F(n-2)
+ *     left  = fibonacci(n - 1)
+ *     right = fibonacci(n - 2)
+ *
+ *     return left + right
+ */
+
 #include<iostream>
 using namespace std;
 

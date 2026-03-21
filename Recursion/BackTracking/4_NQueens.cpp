@@ -20,6 +20,58 @@
  * rows above (they're already filled) or rows below (not filled yet)
  */
 
+/*
+ * Pseudocode: N-Queens using backtracking
+ *
+ * function isSafe(board, row, col, n):
+ *     // check same row
+ *     for j from 0 to n - 1:
+ *         if board[row][j] == 'Q':
+ *             return false
+ *
+ *     // check same column
+ *     for i from 0 to n - 1:
+ *         if board[i][col] == 'Q':
+ *             return false
+ *
+ *     // check left diagonal (↖)
+ *     i = row, j = col
+ *     while i >= 0 AND j >= 0:
+ *         if board[i][j] == 'Q':
+ *             return false
+ *         i--, j--
+ *
+ *     // check right diagonal (↗)
+ *     i = row, j = col
+ *     while i >= 0 AND j < n:
+ *         if board[i][j] == 'Q':
+ *             return false
+ *         i--, j++
+ *
+ *     return true
+ *
+ *
+ * function nQueens(board, row, n, ans):
+ *     // base case: all rows filled → one valid solution
+ *     if row == n:
+ *         add copy of board to ans
+ *         return
+ *
+ *     // try placing queen in each column of this row
+ *     for col from 0 to n - 1:
+ *         if isSafe(board, row, col, n):
+ *             board[row][col] = 'Q'           // place queen
+ *             nQueens(board, row + 1, n, ans) // recurse to next row
+ *             board[row][col] = '.'           // backtrack
+ *
+ *
+ * function solveNQueens(n):
+ *     board = n x n matrix filled with '.'
+ *     ans = empty list of boards
+ *     nQueens(board, 0, n, ans)
+ *     return ans
+ */
+
 #include <iostream>
 #include <vector>
 #include <string>

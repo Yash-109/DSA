@@ -19,6 +19,38 @@
  * Solution: Skip all duplicates when excluding
  */
 
+/*
+ * Pseudocode: Generate all unique subsets (Subsets II)
+ *
+ * function getAllSubsets(nums, current, i, allSubsets):
+ *     // i is current index in nums
+ *     if i == size(nums):
+ *         add copy of current to allSubsets
+ *         return
+ *
+ *     // 1) include nums[i]
+ *     append nums[i] to current
+ *     getAllSubsets(nums, current, i + 1, allSubsets)
+ *     remove last element from current        // backtrack
+ *
+ *     // 2) exclude nums[i] and all its duplicates
+ *     idx = i + 1
+ *     while idx < size(nums) AND nums[idx] == nums[idx - 1]:
+ *         idx++
+ *
+ *     getAllSubsets(nums, current, idx, allSubsets)
+ *
+ *
+ * function subsetsWithDup(nums):
+ *     sort nums                             // group duplicates together
+ *     allSubsets = empty list of lists
+ *     current    = empty list
+ *
+ *     getAllSubsets(nums, current, 0, allSubsets)
+ *
+ *     return allSubsets
+ */
+
 #include <iostream>
 #include <vector>
 #include <algorithm>

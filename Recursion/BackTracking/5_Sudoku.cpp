@@ -20,6 +20,62 @@
  * 6. If no digit works, return false to trigger backtracking
  */
 
+/*
+ * Pseudocode: Sudoku solver using backtracking
+ *
+ * function isSafe(board, row, col, dig):
+ *     // check row
+ *     for j from 0 to 8:
+ *         if board[row][j] == dig:
+ *             return false
+ *
+ *     // check column
+ *     for i from 0 to 8:
+ *         if board[i][col] == dig:
+ *             return false
+ *
+ *     // check 3x3 sub-box
+ *     srow = (row / 3) * 3
+ *     scol = (col / 3) * 3
+ *     for i from srow to srow + 2:
+ *         for j from scol to scol + 2:
+ *             if board[i][j] == dig:
+ *                 return false
+ *
+ *     return true
+ *
+ *
+ * function helper(board, row, col):
+ *     // base case: all rows done → solved
+ *     if row == 9:
+ *         return true
+ *
+ *     // compute next cell
+ *     nextRow = row
+ *     nextCol = col + 1
+ *     if nextCol == 9:
+ *         nextRow = row + 1
+ *         nextCol = 0
+ *
+ *     // if cell already filled, move on
+ *     if board[row][col] != '.':
+ *         return helper(board, nextRow, nextCol)
+ *
+ *     // try digits 1..9
+ *     for dig from '1' to '9':
+ *         if isSafe(board, row, col, dig):
+ *             board[row][col] = dig
+ *             if helper(board, nextRow, nextCol) is true:
+ *                 return true
+ *             board[row][col] = '.'      // backtrack
+ *
+ *     return false   // no digit fits here
+ *
+ *
+ * function solveSudoku(board):
+ *     helper(board, 0, 0)
+ */
+
 #include <iostream>
 #include <vector>
 using namespace std;

@@ -15,6 +15,20 @@
  * Space Complexity: O(1) - only using 2 pointers
  */
 
+/*
+ * Pseudocode (Slow and Fast Pointers)
+ * -----------------------------------
+ *   function middleNode(head):
+ *       slow = head
+ *       fast = head
+ *
+ *       while fast != NULL and fast.next != NULL:
+ *           slow = slow.next         // move 1 step
+ *           fast = fast.next.next    // move 2 steps
+ *
+ *       return slow   // slow now points to middle (second middle for even length)
+ */
+
 class ListNode {
 public:
     int val;

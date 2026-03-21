@@ -6,6 +6,16 @@
  * Remove all occurrences of a substring from a given string
  */
 
+/*
+ * Pseudocode (Iterative erase using find)
+ * --------------------------------------
+ *   function removeOccurrences(s, part):
+ *       while length(s) > 0 AND position = s.find(part) is a valid index:
+ *           erase from s starting at position, length = part.length()
+ *
+ *       return s
+ */
+
 #include<iostream>
 #include<string>
 using namespace std;

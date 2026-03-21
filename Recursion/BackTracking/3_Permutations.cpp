@@ -18,6 +18,30 @@
  * Key Pattern: Swap -> Recurse -> Swap back (backtrack)
  */
 
+/*
+ * Pseudocode: Generate all permutations using swapping
+ *
+ * function getPerms(nums, idx, ans):
+ *     // idx = current position to fix
+ *
+ *     // base case: all positions fixed → one permutation
+ *     if idx == size(nums):
+ *         add copy of nums to ans
+ *         return
+ *
+ *     // try each element from idx..end at position idx
+ *     for i from idx to size(nums) - 1:
+ *         swap(nums[idx], nums[i])          // place nums[i] at idx
+ *         getPerms(nums, idx + 1, ans)      // recurse for next index
+ *         swap(nums[idx], nums[i])          // backtrack: restore array
+ *
+ *
+ * function permute(nums):
+ *     ans = empty list of lists
+ *     getPerms(nums, 0, ans)
+ *     return ans
+ */
+
 #include <iostream>
 #include <vector>
 using namespace std;

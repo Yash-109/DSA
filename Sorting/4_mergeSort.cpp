@@ -24,6 +24,53 @@
  * Recurrence Relation: T(n) = 2T(n/2) + O(n)
  */
 
+/*
+ * Pseudocode: Merge Sort
+ *
+ * function merge(arr, st, mid, end):
+ *     temp = empty list
+ *     i = st
+ *     j = mid + 1
+ *
+ *     // merge two sorted halves into temp
+ *     while i <= mid AND j <= end:
+ *         if arr[i] <= arr[j]:           // for descending use >=
+ *             append arr[i] to temp
+ *             i++
+ *         else:
+ *             append arr[j] to temp
+ *             j++
+ *
+ *     // copy remaining left half
+ *     while i <= mid:
+ *         append arr[i] to temp
+ *         i++
+ *
+ *     // copy remaining right half
+ *     while j <= end:
+ *         append arr[j] to temp
+ *         j++
+ *
+ *     // write back into arr[st..end]
+ *     for k from 0 to length(temp) - 1:
+ *         arr[st + k] = temp[k]
+ *
+ *
+ * function mergeSort(arr, st, end):
+ *     // base case: single element or empty segment
+ *     if st >= end:
+ *         return
+ *
+ *     mid = st + (end - st) / 2
+ *
+ *     // sort left and right halves
+ *     mergeSort(arr, st, mid)
+ *     mergeSort(arr, mid + 1, end)
+ *
+ *     // merge sorted halves
+ *     merge(arr, st, mid, end)
+ */
+
 #include <iostream>
 #include <vector>
 using namespace std;

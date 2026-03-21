@@ -12,6 +12,29 @@
  * 2. Floyd's Cycle Detection (Optimal): O(n) time, O(1) space
  */
 
+/*
+ * Pseudocode (Floyd's Cycle Detection)
+ * ------------------------------------
+ *   // treat nums as a linked list where next index is nums[index]
+ *   function findDuplicate(nums):
+ *       slow = nums[0]
+ *       fast = nums[0]
+ *
+ *       // Phase 1: find meeting point inside cycle
+ *       do:
+ *           slow = nums[slow]           // move 1 step
+ *           fast = nums[nums[fast]]     // move 2 steps
+ *       while slow != fast
+ *
+ *       // Phase 2: find entry of cycle (duplicate value)
+ *       slow = nums[0]
+ *       while slow != fast:
+ *           slow = nums[slow]
+ *           fast = nums[fast]
+ *
+ *       return slow   // duplicate number
+ */
+
 #include<iostream>
 #include<vector>
 #include<unordered_set>

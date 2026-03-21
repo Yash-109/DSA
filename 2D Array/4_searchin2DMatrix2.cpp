@@ -34,6 +34,27 @@
  * But File 3's approach only works for non-overlapping row matrices!
  */
 
+/*
+ * Pseudocode (Staircase Search from Top-Right)
+ * -------------------------------------------
+ *   function searchMatrix(mat, target):
+ *       m = mat.size()
+ *       n = mat[0].size()
+ *
+ *       r = 0
+ *       c = n - 1        // start at top-right corner
+ *
+ *       while r < m and c >= 0:
+ *           if mat[r][c] == target:
+ *               return true
+ *           else if mat[r][c] > target:
+ *               c = c - 1        // move left to smaller values
+ *           else:
+ *               r = r + 1        // move down to larger values
+ *
+ *       return false
+ */
+
 #include<iostream>
 #include<vector>
 using namespace std;

@@ -4,6 +4,50 @@
 using namespace std;
 
 //  Leetcode: 169: Majority Element
+
+/*
+ * Approach 1 (Sorting + Frequency Count)
+ * -------------------------------------
+ * - Sort the array; the majority element (appearing > n/2 times) must occupy
+ *   the middle region.
+ * - Walk through the sorted array and count the frequency of the current
+ *   value; when any frequency exceeds n/2, that value is the majority.
+ *
+ * Approach 2 (Moore's Voting Algorithm)
+ * -------------------------------------
+ * - Maintain a candidate 'ans' and a counter 'freq'.
+ * - Traverse the array:
+ *     - If freq == 0, set candidate = current element.
+ *     - If current element == candidate, increment freq.
+ *     - Else decrement freq.
+ * - After one pass, 'candidate' is the potential majority element.
+ * - Do a second pass to verify candidate actually appears > n/2 times.
+ *
+ * Pseudocode (Moore's Voting + Verification)
+ * -----------------------------------------
+ *   function majorityElement(nums):
+ *       candidate = 0
+ *       freq = 0
+ *
+ *       for each x in nums:
+ *           if freq == 0:
+ *               candidate = x
+ *           if x == candidate:
+ *               freq = freq + 1
+ *           else:
+ *               freq = freq - 1
+ *
+ *       // verify candidate
+ *       count = 0
+ *       for each x in nums:
+ *           if x == candidate:
+ *               count = count + 1
+ *
+ *       if count > nums.size() / 2:
+ *           return candidate
+ *       else:
+ *           return -1
+ */
 int main()
 {
     vector<int> nums={2,2,1,1,1,2,2};

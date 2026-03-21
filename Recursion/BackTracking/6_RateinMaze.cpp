@@ -22,6 +22,46 @@
  * Key Pattern: Mark visited -> Recurse 4 directions -> Unmark (backtrack)
  */
 
+/*
+ * Pseudocode: Rat in a Maze (all paths)
+ *
+ * function helper(mat, r, c, path, ans):
+ *     n = size(mat)
+ *
+ *     // invalid cell: out of bounds, blocked, or visited
+ *     if r < 0 OR c < 0 OR r >= n OR c >= n OR mat[r][c] == 0 OR mat[r][c] == -1:
+ *         return
+ *
+ *     // destination reached
+ *     if r == n - 1 AND c == n - 1:
+ *         add path to ans
+ *         return
+ *
+ *     // mark current cell visited
+ *     mat[r][c] = -1
+ *
+ *     // explore 4 directions with corresponding characters
+ *     helper(mat, r + 1, c, path + "D", ans)   // Down
+ *     helper(mat, r - 1, c, path + "U", ans)   // Up
+ *     helper(mat, r, c - 1, path + "L", ans)   // Left
+ *     helper(mat, r, c + 1, path + "R", ans)   // Right
+ *
+ *     // backtrack: unmark cell so other paths can use it
+ *     mat[r][c] = 1
+ *
+ *
+ * function findPath(mat):
+ *     n = size(mat)
+ *     ans = empty list of strings
+ *
+ *     // if start or end is blocked, return empty
+ *     if mat[0][0] == 0 OR mat[n-1][n-1] == 0:
+ *         return ans
+ *
+ *     helper(mat, 0, 0, "", ans)
+ *     return ans
+ */
+
 #include <iostream>
 #include <vector>
 using namespace std;

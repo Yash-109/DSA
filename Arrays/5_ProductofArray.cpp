@@ -3,6 +3,43 @@
 // Time Complexity: O(n^2) - brute force approach
 // Space Complexity: O(1) - not counting the output array
 
+/*
+ * Approach 1 (Brute Force)
+ * ------------------------
+ * - For each index i, multiply all elements nums[j] where j != i.
+ * - Store the product in ans[i]. Time: O(n^2).
+ *
+ * Approach 2 (Prefix and Suffix Products)
+ * --------------------------------------
+ * - Build prefix[i] = product of all elements before i.
+ * - Build suffix[i] = product of all elements after i.
+ * - Then ans[i] = prefix[i] * suffix[i] for every i. Time: O(n), Space: O(n).
+ *
+ * Approach 3 (Space-Optimized Prefix + Running Suffix)
+ * ----------------------------------------------------
+ * - Use ans[] itself to store prefix products.
+ * - Then traverse from right to left maintaining a running suffix product and
+ *   multiply into ans[i]. Overall Time: O(n), extra Space: O(1).
+ *
+ * Pseudocode (Space-Optimized)
+ * ----------------------------
+ *   function productExceptSelf(nums):
+ *       n = nums.size()
+ *       ans = array of size n filled with 1
+ *
+ *       // prefix pass
+ *       for i from 1 to n-1:
+ *           ans[i] = ans[i-1] * nums[i-1]
+ *
+ *       // suffix pass
+ *       suffix = 1
+ *       for i from n-2 down to 0:
+ *           suffix = suffix * nums[i+1]
+ *           ans[i] = ans[i] * suffix
+ *
+ *       return ans
+ */
+
 #include<bits/stdc++.h>
 using namespace std;
 

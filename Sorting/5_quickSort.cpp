@@ -26,6 +26,35 @@
  * where k is the number of elements smaller than pivot
  */
 
+/*
+ * Pseudocode: Quick Sort (Lomuto partition)
+ *
+ * function partition(arr, st, end):
+ *     pivot = arr[end]          // choose last element as pivot
+ *     idx = st - 1              // boundary of smaller elements
+ *
+ *     for j from st to end - 1:
+ *         if arr[j] <= pivot:   // for descending use >=
+ *             idx = idx + 1
+ *             swap arr[j] with arr[idx]
+ *
+ *     // place pivot in its correct sorted position
+ *     idx = idx + 1
+ *     swap arr[end] with arr[idx]
+ *     return idx                // pivot index
+ *
+ *
+ * function quickSort(arr, st, end):
+ *     if st >= end:
+ *         return
+ *
+ *     pivIdx = partition(arr, st, end)
+ *
+ *     // recursively sort left and right parts
+ *     quickSort(arr, st, pivIdx - 1)
+ *     quickSort(arr, pivIdx + 1, end)
+ */
+
 #include <iostream>
 #include <vector>
 using namespace std;

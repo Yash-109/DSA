@@ -14,6 +14,44 @@
  * 3. Optimal: Sort + two pointers without extra set (O(n^2), O(1) extra)
  */
 
+/*
+ * Pseudocode (Optimal: Sorting + Two Pointers)
+ * -------------------------------------------
+ *   function threeSum(nums):
+ *       sort(nums)
+ *       n = nums.size()
+ *       ans = empty list of triplets
+ *
+ *       for i from 0 to n-1:
+ *           // skip duplicate first elements
+ *           if i > 0 and nums[i] == nums[i-1]:
+ *               continue
+ *
+ *           j = i + 1
+ *           k = n - 1
+ *
+ *           while j < k:
+ *               sum = nums[i] + nums[j] + nums[k]
+ *
+ *               if sum < 0:
+ *                   j = j + 1        // need a larger sum
+ *               else if sum > 0:
+ *                   k = k - 1        // need a smaller sum
+ *               else:
+ *                   append [nums[i], nums[j], nums[k]] to ans
+ *                   j = j + 1
+ *                   k = k - 1
+ *
+ *                   // skip duplicates for nums[j]
+ *                   while j < k and nums[j] == nums[j-1]:
+ *                       j = j + 1
+ *                   // skip duplicates for nums[k]
+ *                   while j < k and nums[k] == nums[k+1]:
+ *                       k = k - 1
+ *
+ *       return ans
+ */
+
 #include <iostream>
 #include <vector>
 #include <set>

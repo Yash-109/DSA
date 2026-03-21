@@ -9,6 +9,47 @@
  * Space Complexity: O(1)
  */
 
+/*
+ * Approach (Dutch National Flag Algorithm)
+ * ---------------------------------------
+ * - Maintain three regions in the array using indices low, mid and high:
+ *     [0 .. low-1]     -> all 0s
+ *     [low .. mid-1]   -> all 1s
+ *     [mid .. high]    -> unknown / unprocessed
+ *     [high+1 .. n-1]  -> all 2s
+ * - Start with low = 0, mid = 0, high = n-1 and process nums[mid]:
+ *     - If nums[mid] == 0: swap(nums[low], nums[mid]), increment low and mid
+ *     - If nums[mid] == 1: just increment mid
+ *     - If nums[mid] == 2: swap(nums[mid], nums[high]) and decrement high
+ *       (do not increment mid here because the new element at mid is
+ *        unprocessed and must be checked again)
+ * - Continue until mid surpasses high; at that point the whole array is
+ *   partitioned into 0s, then 1s, then 2s.
+ *
+ * Pseudocode
+ * ---------
+ *   function sortColors(nums):
+ *       n = nums.size()
+ *       low  = 0
+ *       mid  = 0
+ *       high = n - 1
+ *
+ *       while mid <= high:
+ *           if nums[mid] == 0:
+ *               swap(nums[low], nums[mid])
+ *               low  = low + 1
+ *               mid  = mid + 1
+ *
+ *           else if nums[mid] == 1:
+ *               mid = mid + 1
+ *
+ *           else:   // nums[mid] == 2
+ *               swap(nums[mid], nums[high])
+ *               high = high - 1
+ *
+ *       // array is now sorted as 0s, then 1s, then 2s
+ */
+
 #include <vector>
 #include <algorithm>
 using namespace std;

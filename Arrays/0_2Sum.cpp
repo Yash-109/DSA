@@ -7,6 +7,38 @@
  * Returns indices of the two numbers
  */
 
+/*
+ * Approach (Two Pointers on Sorted Array)
+ * --------------------------------------
+ * - Use two indices: i at the start and j at the end of the sorted array.
+ * - At each step compute currentSum = nums[i] + nums[j].
+ *   - If currentSum is greater than target, we need a smaller sum, so move
+ *     j one step left.
+ *   - If currentSum is less than target, we need a larger sum, so move
+ *     i one step right.
+ *   - If currentSum equals target, we have found the pair and return
+ *     their indices.
+ * - If i crosses j without finding such a pair, then no valid pair exists.
+ *
+ * Pseudocode
+ * ---------
+ *   function twoSum(nums, target):
+ *       i = 0
+ *       j = nums.size() - 1
+ *
+ *       while i < j:
+ *           currentSum = nums[i] + nums[j]
+ *
+ *           if currentSum > target:
+ *               j = j - 1
+ *           else if currentSum < target:
+ *               i = i + 1
+ *           else:
+ *               return [i, j]
+ *
+ *       return empty list   // no pair found
+ */
+
 #include<iostream>
 #include<vector>
 using namespace std;

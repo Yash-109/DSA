@@ -16,6 +16,24 @@ using namespace std;
 // Time Complexity: O(n) - single pass
 // Space Complexity: O(1) - only using two variables
 
+/*
+ * Pseudocode (Kadane's Algorithm)
+ * -------------------------------
+ *   function maxSubArray(nums):
+ *       currsum = 0
+ *       maxsum = -infinity
+ *
+ *       for each value x in nums:
+ *           currsum = currsum + x
+ *           if currsum > maxsum:
+ *               maxsum = currsum
+ *
+ *           if currsum < 0:
+ *               currsum = 0      // discard negative prefix
+ *
+ *       return maxsum
+ */
+
 class Solution {
 public:
     int maxSubArray(vector<int>& nums) {

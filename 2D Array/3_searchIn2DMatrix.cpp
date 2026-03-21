@@ -18,6 +18,45 @@
  * 2. Apply binary search on columns to find element
  */
 
+/*
+ * Pseudocode (Row + Column Binary Search)
+ * --------------------------------------
+ *   function searchMatrix(mat, target):
+ *       m = mat.size()
+ *       n = mat[0].size()
+ *       startRow = 0
+ *       endRow = m - 1
+ *
+ *       // step 1: find row where target may lie
+ *       while startRow <= endRow:
+ *           midRow = startRow + (endRow - startRow) / 2
+ *
+ *           if mat[midRow][0] <= target <= mat[midRow][n-1]:
+ *               // step 2: binary search within this row
+ *               return binarySearchRow(mat, target, midRow)
+ *           else if target > mat[midRow][n-1]:
+ *               startRow = midRow + 1
+ *           else:
+ *               endRow = midRow - 1
+ *
+ *       return false
+ *
+ *   function binarySearchRow(mat, target, row):
+ *       st = 0
+ *       end = number_of_columns - 1
+ *
+ *       while st <= end:
+ *           mid = st + (end - st) / 2
+ *           if mat[row][mid] == target:
+ *               return true
+ *           else if mat[row][mid] < target:
+ *               st = mid + 1
+ *           else:
+ *               end = mid - 1
+ *
+ *       return false
+ */
+
 #include<iostream>
 #include<vector>
 using namespace std;

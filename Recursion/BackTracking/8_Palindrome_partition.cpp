@@ -24,6 +24,38 @@
  * Key Pattern: Try all prefixes -> Recurse with suffix -> Backtrack
  */
 
+/*
+ * Pseudocode: Palindrome Partitioning via backtracking
+ *
+ * function isPalin(s):
+ *     s2 = reverse of s
+ *     return s == s2
+ *
+ *
+ * function getAllParts(s, current, ans):
+ *     // base case: no characters left → one complete partition
+ *     if size(s) == 0:
+ *         add copy of current to ans
+ *         return
+ *
+ *     // try all prefixes of s as first cut
+ *     for i from 0 to size(s) - 1:
+ *         part = substring of s from 0 to i (inclusive)
+ *
+ *         if isPalin(part):
+ *             append part to current          // choose this palindrome
+ *             suffix = substring of s from i+1 to end
+ *             getAllParts(suffix, current, ans)
+ *             remove last element from current   // backtrack
+ *
+ *
+ * function partition(s):
+ *     ans = empty list of list<string>
+ *     current = empty list<string>
+ *     getAllParts(s, current, ans)
+ *     return ans
+ */
+
 #include <iostream>
 #include <vector>
 #include <string>

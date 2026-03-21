@@ -6,6 +6,36 @@
  * Check if s1's permutation is a substring of s2.
  */
 
+/*
+ * Pseudocode (Sliding Window with Frequency Arrays)
+ * -------------------------------------------------
+ *   function checkInclusion(s1, s2):
+ *       if len(s1) > len(s2):
+ *           return false
+ *
+ *       freq1[26] = {0}
+ *       freq2[26] = {0}
+ *       windowSize = len(s1)
+ *
+ *       // build initial frequencies
+ *       for i from 0 to windowSize-1:
+ *           freq1[s1[i] - 'a']++
+ *           freq2[s2[i] - 'a']++
+ *
+ *       if freq1 equals freq2:
+ *           return true
+ *
+ *       // slide window over s2
+ *       for i from windowSize to len(s2)-1:
+ *           freq2[s2[i] - 'a']++                      // add new char
+ *           freq2[s2[i - windowSize] - 'a']--        // remove old char
+ *
+ *           if freq1 equals freq2:
+ *               return true
+ *
+ *       return false
+ */
+
 #include <iostream>
 #include <string>
 using namespace std;

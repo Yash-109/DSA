@@ -22,6 +22,37 @@
  * - Unlike Count Inversion (which uses divide-conquer), this uses pure recursion
  */
 
+/*
+ * Pseudocode: Validate Knight's Tour path
+ *
+ * function isValid(grid, r, c, n, expVal):
+ *     // boundary and value check
+ *     if r < 0 OR c < 0 OR r >= n OR c >= n OR grid[r][c] != expVal:
+ *         return false
+ *
+ *     // all cells visited in correct order
+ *     if expVal == n * n - 1:
+ *         return true
+ *
+ *     // try all 8 knight moves with next expected value
+ *     if isValid(grid, r - 2, c + 1, n, expVal + 1): return true
+ *     if isValid(grid, r - 1, c + 2, n, expVal + 1): return true
+ *     if isValid(grid, r + 1, c + 2, n, expVal + 1): return true
+ *     if isValid(grid, r + 2, c + 1, n, expVal + 1): return true
+ *     if isValid(grid, r + 2, c - 1, n, expVal + 1): return true
+ *     if isValid(grid, r + 1, c - 2, n, expVal + 1): return true
+ *     if isValid(grid, r - 1, c - 2, n, expVal + 1): return true
+ *     if isValid(grid, r - 2, c - 1, n, expVal + 1): return true
+ *
+ *     return false
+ *
+ *
+ * function checkValidGrid(grid):
+ *     n = size(grid)
+ *     // start from top-left with expected value 0
+ *     return isValid(grid, 0, 0, n, 0)
+ */
+
 #include <iostream>
 #include <vector>
 using namespace std;

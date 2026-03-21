@@ -48,6 +48,41 @@ struct ListNode {
  * Space Complexity: O(1) - in-place swapping using a fixed number of pointers
  */
 
+/*
+ * Pseudocode (Iterative Pairwise Swap)
+ * -----------------------------------
+ *   function swapPairs(head):
+ *       if head is NULL or head.next is NULL:
+ *           return head
+ *
+ *       first = head
+ *       sec   = head.next
+ *       prev  = NULL
+ *
+ *       while first != NULL and sec != NULL:
+ *           third = sec.next
+ *
+ *           // swap links between first and sec
+ *           sec.next = first
+ *           first.next = third
+ *
+ *           // connect previous pair to current swapped pair
+ *           if prev != NULL:
+ *               prev.next = sec
+ *           else:
+ *               head = sec     // update head for first pair
+ *
+ *           // move pointers to next pair
+ *           prev = first
+ *           first = third
+ *           if third != NULL:
+ *               sec = third.next
+ *           else:
+ *               sec = NULL
+ *
+ *       return head
+ */
+
 class Solution {
 public:
     ListNode* swapPairs(ListNode* head) {

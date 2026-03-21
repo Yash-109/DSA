@@ -9,6 +9,31 @@
  * Space Complexity: O(1)
  */
 
+/*
+ * Pseudocode (Dutch National Flag Algorithm)
+ * -----------------------------------------
+ *   function sortColors(nums):
+ *       n = nums.size()
+ *       low  = 0
+ *       mid  = 0
+ *       high = n - 1
+ *
+ *       while mid <= high:
+ *           if nums[mid] == 0:
+ *               swap nums[low], nums[mid]
+ *               low = low + 1
+ *               mid = mid + 1
+ *
+ *           else if nums[mid] == 1:
+ *               mid = mid + 1
+ *
+ *           else:   // nums[mid] == 2
+ *               swap nums[mid], nums[high]
+ *               high = high - 1
+ *
+ *       // array now sorted as 0s, then 1s, then 2s
+ */
+
 #include <vector>
 #include <algorithm>
 using namespace std;

@@ -41,6 +41,42 @@ struct ListNode {
  * Space Complexity: O(n/k) - recursion depth (worst-case O(n) if k = 1)
  */
 
+/*
+ * Pseudocode (Recursive k-Group Reversal)
+ * --------------------------------------
+ *   function reverseKGroup(head, k):
+ *       if head is NULL or k <= 1:
+ *           return head
+ *
+ *       temp = head
+ *       count = 0
+ *
+ *       // step 1: check if there are at least k nodes
+ *       while count < k:
+ *           if temp is NULL:
+ *               return head      // not enough nodes, no change
+ *           temp = temp.next
+ *           count = count + 1
+ *
+ *       // step 2: recursively process the rest starting from temp
+ *       prevGroupHead = reverseKGroup(temp, k)
+ *
+ *       // step 3: reverse current k nodes
+ *       curr = head
+ *       count = 0
+ *       prev = prevGroupHead
+ *
+ *       while count < k:
+ *           nextNode = curr.next
+ *           curr.next = prev
+ *           prev = curr
+ *           curr = nextNode
+ *           count = count + 1
+ *
+ *       // prev is new head of this k-group
+ *       return prev
+ */
+
 class Solution {
 public:
     ListNode* reverseKGroup(ListNode* head, int k) {

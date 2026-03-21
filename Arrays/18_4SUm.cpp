@@ -20,6 +20,46 @@
  * Space Complexity: O(1) extra (ignoring output)
  */
 
+/*
+ * Pseudocode (Sorting + Two Nested Loops + Two Pointers)
+ * ------------------------------------------------------
+ *   function fourSum(nums, target):
+ *       sort(nums)
+ *       n = nums.size()
+ *       ans = empty list of quadruplets
+ *
+ *       for i from 0 to n-4:
+ *           if i > 0 and nums[i] == nums[i-1]:
+ *               continue          // skip duplicate first element
+ *
+ *           for j from i+1 to n-3:
+ *               if j > i+1 and nums[j] == nums[j-1]:
+ *                   continue      // skip duplicate second element
+ *
+ *               p = j + 1
+ *               q = n - 1
+ *
+ *               while p < q:
+ *                   sum = nums[i] + nums[j] + nums[p] + nums[q]
+ *
+ *                   if sum < target:
+ *                       p = p + 1
+ *                   else if sum > target:
+ *                       q = q - 1
+ *                   else:
+ *                       append [nums[i], nums[j], nums[p], nums[q]] to ans
+ *                       p = p + 1
+ *                       q = q - 1
+ *
+ *                       // skip duplicates for third and fourth elements
+ *                       while p < q and nums[p] == nums[p-1]:
+ *                           p = p + 1
+ *                       while p < q and nums[q] == nums[q+1]:
+ *                           q = q - 1
+ *
+ *       return ans
+ */
+
 #include <iostream>
 #include <vector>
 #include <algorithm>

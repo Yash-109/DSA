@@ -23,6 +23,61 @@
  * Key Pattern: Divide -> Count Left + Right -> Count Split -> Combine
  */
 
+/*
+ * Pseudocode: Count inversions using modified merge sort
+ *
+ * function merge(arr, st, mid, end):
+ *     create empty list temp
+ *     i = st, j = mid + 1
+ *     invCount = 0
+ *
+ *     // merge two sorted halves and count split inversions
+ *     while i <= mid AND j <= end:
+ *         if arr[i] <= arr[j]:
+ *             append arr[i] to temp
+ *             i++
+ *         else:
+ *             // arr[i] > arr[j] → all remaining in left half form inversions
+ *             append arr[j] to temp
+ *             j++
+ *             invCount += (mid - i + 1)
+ *
+ *     // copy any remaining elements from left half
+ *     while i <= mid:
+ *         append arr[i] to temp
+ *         i++
+ *
+ *     // copy any remaining elements from right half
+ *     while j <= end:
+ *         append arr[j] to temp
+ *         j++
+ *
+ *     // write merged result back into arr[st..end]
+ *     for k from 0 to length(temp) - 1:
+ *         arr[st + k] = temp[k]
+ *
+ *     return invCount
+ *
+ *
+ * function mergeSort(arr, st, end):
+ *     // base case: single element → no inversions
+ *     if st >= end:
+ *         return 0
+ *
+ *     mid = st + (end - st) / 2
+ *
+ *     // count in left half
+ *     leftInv  = mergeSort(arr, st, mid)
+ *
+ *     // count in right half
+ *     rightInv = mergeSort(arr, mid + 1, end)
+ *
+ *     // count split inversions while merging
+ *     splitInv = merge(arr, st, mid, end)
+ *
+ *     return leftInv + rightInv + splitInv
+ */
+
 #include <iostream>
 #include <vector>
 using namespace std;
