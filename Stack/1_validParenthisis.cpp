@@ -25,6 +25,28 @@ using namespace std;
  *   - After processing the entire string, the stack must be empty for the
  *     string to be valid (every opening bracket has a matching closing one).
  *
+ * Pseudocode
+ * ---------
+ *   create empty stack<char> st
+ *
+ *   for each character ch in s:
+ *       if ch is '(', '{', '[':
+ *           push ch onto st
+ *       else:   // ch is one of ')', '}', ']'
+ *           if st is empty:
+ *               return false
+ *
+ *           top = st.top()
+ *           if (top, ch) is a matching pair:   // (), {}, []
+ *               st.pop()
+ *           else:
+ *               return false
+ *
+ *   if st is empty:
+ *       return true
+ *   else:
+ *       return false
+ *
  * Time Complexity : O(n)  - each character is pushed and popped at most once
  * Space Complexity: O(n)  - in the worst case, all characters are opening
  */
