@@ -137,3 +137,46 @@ public:
     return ans;
   }
 };
+
+  /*
+  ====================
+  Part 3: Previous Smaller Element
+  ====================
+
+  Goal: For every index i, find the closest element to the LEFT of arr[i]
+        that is strictly smaller than arr[i]. If it does not exist, store -1.
+
+  Small pseudocode:
+    stack<int> s
+    vector<int> ans(n)
+
+    for i from 0 to n-1:        // left to right
+      while s not empty and s.top() >= arr[i]:
+        s.pop()                 // remove elements that are not smaller
+
+      if s empty:  ans[i] = -1
+      else:        ans[i] = s.top()
+
+      s.push(arr[i])
+  */
+
+  vector<int> prevSmallerElement(vector<int> arr) {
+    vector<int> ans(arr.size(), 0);
+    stack<int> s;
+
+    for (int i = 0; i < static_cast<int>(arr.size()); i++) {
+      while (!s.empty() && s.top() >= arr[i]) {
+        s.pop();
+      }
+
+      if (s.empty()) {
+        ans[i] = -1;
+      } else {
+        ans[i] = s.top();
+      }
+
+      s.push(arr[i]);
+    }
+
+    return ans;
+  }
